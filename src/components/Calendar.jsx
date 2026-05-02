@@ -41,9 +41,9 @@ export default function Calendar({ onSelect }) {
   };
 
   return (
-    <div style="width: 100%; max-width: 900px; margin: 0 auto;">
+    <div style={{ width: '100%', maxWidth: '900px', margin: '0 auto' }}>
       <iframe
-        srcdoc="
+        srcDoc="
       <!DOCTYPE html>
       <html lang='en'>
       <head>
@@ -104,7 +104,7 @@ export default function Calendar({ onSelect }) {
     "
         width="100%"
         height="500"
-        style="border: none; border-radius: 12px;"
+        style={{ border: 'none', borderRadius: '12px' }}
       ></iframe>
     </div>
   );

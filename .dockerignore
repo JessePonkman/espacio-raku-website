@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+.claude
+.DS_Store
+npm-debug.log*
+Dockerfile
+README.md
+WhatsApp Video *.mp4

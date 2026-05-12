@@ -49,6 +49,10 @@ export default function Header() {
           <span />
         </button>
       </div>
+
+      {open && (
+        <div className="nav-backdrop" onClick={close} aria-hidden="true" />
+      )}
     </header>
   );
 }

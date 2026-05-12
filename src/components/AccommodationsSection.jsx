@@ -15,35 +15,38 @@ export default function AccommodationsSection() {
         </p>
       </div>
 
-      <div className="container accom-grid">
-        {accommodations.map((a) => (
-          <article key={a.id} className="accom-card">
-            <div className="accom-img">
-              <img src={a.image} alt={a.name} loading="lazy" />
-            </div>
-            <div className="accom-body">
-              <h3>{a.name}</h3>
-              <p className="accom-capacity">{a.capacity}</p>
-              <p className="accom-desc">{a.shortDescription}</p>
-              <div className="accom-chips" aria-label="Comodidades">
-                {a.amenities.map((am) => (
-                  <span key={am} className="chip">
-                    {am}
-                  </span>
-                ))}
+      <div className="section-carousel">
+        <p className="carousel-hint" aria-hidden="true">Deslizá para ver más →</p>
+        <div className="accom-grid">
+          {accommodations.map((a) => (
+            <article key={a.id} className="accom-card">
+              <div className="accom-img">
+                <img src={a.image} alt={a.name} loading="lazy" />
               </div>
-              <a
-                href={buildWhatsAppUrl(messages.accommodation(a.name))}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-                aria-label={`Consultar disponibilidad para ${a.name}`}
-              >
-                Consultar por este alojamiento
-              </a>
-            </div>
-          </article>
-        ))}
+              <div className="accom-body">
+                <h3>{a.name}</h3>
+                <p className="accom-capacity">{a.capacity}</p>
+                <p className="accom-desc">{a.shortDescription}</p>
+                <div className="accom-chips" aria-label="Comodidades">
+                  {a.amenities.map((am) => (
+                    <span key={am} className="chip">
+                      {am}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={buildWhatsAppUrl(messages.accommodation(a.name))}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                  aria-label={`Consultar disponibilidad para ${a.name}`}
+                >
+                  Consultar por este alojamiento
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

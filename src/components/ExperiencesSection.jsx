@@ -27,30 +27,33 @@ export default function ExperiencesSection() {
         </p>
       </div>
 
-      <div className="container exp-cards-grid">
-        {experiences.map((exp) => (
-          <article key={exp.id} className="exp-card">
-            <div className="exp-card-img">
-              <img src={exp.image} alt={exp.title} loading="lazy" />
-              <span className={`exp-status ${statusClass[exp.status]}`}>
-                {statusLabel[exp.status]}
-              </span>
-            </div>
-            <div className="exp-card-body">
-              <h3>{exp.title}</h3>
-              <p>{exp.description}</p>
-              <a
-                href={buildWhatsAppUrl(messages.experience(exp.title))}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary"
-                aria-label={`Consultar por la experiencia ${exp.title}`}
-              >
-                Consultar experiencia
-              </a>
-            </div>
-          </article>
-        ))}
+      <div className="section-carousel">
+        <p className="carousel-hint" aria-hidden="true">Deslizá para ver más →</p>
+        <div className="exp-cards-grid">
+          {experiences.map((exp) => (
+            <article key={exp.id} className="exp-card">
+              <div className="exp-card-img">
+                <img src={exp.image} alt={exp.title} loading="lazy" />
+                <span className={`exp-status ${statusClass[exp.status]}`}>
+                  {statusLabel[exp.status]}
+                </span>
+              </div>
+              <div className="exp-card-body">
+                <h3>{exp.title}</h3>
+                <p>{exp.description}</p>
+                <a
+                  href={buildWhatsAppUrl(messages.experience(exp.title))}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  aria-label={`Consultar por la experiencia ${exp.title}`}
+                >
+                  Consultar experiencia
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

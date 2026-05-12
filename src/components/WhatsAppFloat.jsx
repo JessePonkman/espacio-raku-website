@@ -1,9 +1,15 @@
 import { WhatsAppIcon } from './icons/Icons.jsx';
+import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
 
-export default function WhatsAppFloat({ phone = '5492610000000', message = 'Hola! Quiero consultar disponibilidad en Espacio Raku.' }) {
-  const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+export default function WhatsAppFloat() {
   return (
-    <a href={href} className="wa-float" aria-label="Consultar por WhatsApp" target="_blank" rel="noopener">
+    <a
+      href={buildWhatsAppUrl(messages.general)}
+      className="wa-float"
+      aria-label="Consultar disponibilidad por WhatsApp"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <WhatsAppIcon />
     </a>
   );

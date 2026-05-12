@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import { Logo } from './icons/Icons.jsx';
+import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
 
 const links = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#experiencia', label: 'Experiencia' },
-  { href: '#espacios', label: 'Espacios' },
-  { href: '#disponibilidad', label: 'Disponibilidad' },
-  { href: '#proceso', label: 'Reservar' },
-  { href: '#faq', label: 'FAQ' }
+  { href: '#alojamientos', label: 'Alojamientos' },
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#experiencias', label: 'Experiencias' },
+  { href: '#ubicacion', label: 'Ubicación' },
+  { href: '#faq', label: 'Preguntas' },
 ];
 
 export default function Header() {
@@ -17,28 +16,37 @@ export default function Header() {
   return (
     <header className="site-header" id="top">
       <div className="container header-inner">
-        <a href="#top" className="logo" aria-label="Espacio Raku, inicio">
-          <Logo className="logo-mark" style={{ color: '#8a9b6f' }} />
-          <span className="logo-text">
-            <span className="logo-pre">espacio</span>
-            <span className="logo-name">Raku</span>
-          </span>
+        <a href="#top" aria-label="Espacio Raku, volver al inicio">
+          <img src="/assets/brand/logo-color.png" alt="Espacio Raku" className="logo-img" />
         </a>
 
-        <nav className={`nav ${open ? 'open' : ''}`}>
+        <nav className={`nav ${open ? 'open' : ''}`} aria-label="Navegación principal">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={close}>{l.label}</a>
+            <a key={l.href} href={l.href} onClick={close}>
+              {l.label}
+            </a>
           ))}
-          <a href="#contacto" className="nav-cta" onClick={close}>Consultar</a>
+          <a
+            href={buildWhatsAppUrl(messages.availability)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-cta"
+            onClick={close}
+            aria-label="Consultar disponibilidad por WhatsApp"
+          >
+            Consultar
+          </a>
         </nav>
 
         <button
           className="menu-btn"
-          aria-label="Abrir menú"
+          aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <span /><span /><span />
+          <span />
+          <span />
+          <span />
         </button>
       </div>
     </header>

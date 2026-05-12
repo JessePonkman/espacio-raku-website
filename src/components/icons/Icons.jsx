@@ -122,6 +122,39 @@ export const WhatsAppIcon = (p) => (
   </svg>
 );
 
+export const WifiIcon = (p) => (
+  <svg {...props} {...p}>
+    <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0" />
+    <circle cx="12" cy="20" r="1" fill="currentColor" />
+  </svg>
+);
+
+export const PoolIcon = (p) => (
+  <svg {...props} {...p}>
+    <path d="M2 12c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0" />
+    <path d="M2 7c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0" />
+    <path d="M2 17c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0" />
+    <path d="M8 5V3M16 5V3" />
+  </svg>
+);
+
+export const CarIcon = (p) => (
+  <svg {...props} {...p}>
+    <path d="M19 17H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2z" />
+    <path d="m17 7-2-4H9L7 7" />
+    <circle cx="8" cy="17" r="2" />
+    <circle cx="16" cy="17" r="2" />
+  </svg>
+);
+
+export const WindIcon = (p) => (
+  <svg {...props} {...p}>
+    <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2" />
+    <path d="M9.6 4.6A2 2 0 1 1 11 8H2" />
+    <path d="M12.6 19.4A2 2 0 1 0 14 16H2" />
+  </svg>
+);
+
 export const Logo = (p) => (
   <svg viewBox="0 0 64 64" aria-hidden="true" {...p}>
     <path d="M10 38 L32 18 L54 38 L54 52 L10 52 Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />

@@ -9,9 +9,11 @@ set -Eeuo pipefail
 #
 # Optional env vars:
 #   IMAGE_NAME           Docker Hub repository name. Default: espacio-raku-website
-#   TAG                  Image tag. Default: current git short SHA, or timestamp if not in git
+#   TAG                  Image tag. Default: current git short SHA, with a timestamp
+#                        suffix when the worktree is dirty, or timestamp if not in git
 #   CLOUD_RUN_SERVICE    Cloud Run service name. Default: espacio-raku-website
 #   CLOUD_RUN_REGION     Cloud Run region. Default: us-central1
+#   DOCKER_PLATFORM      Target image platform(s). Default: linux/amd64
 #   ALLOW_UNAUTHENTICATED Whether to expose the service publicly. Default: true
 #   DOCKER_PASSWORD      If set, script logs in to Docker Hub non-interactively
 #
@@ -45,12 +47,16 @@ main() {
   local image_name="${IMAGE_NAME:-espacio-raku-website}"
   local cloud_run_service="${CLOUD_RUN_SERVICE:-espacio-raku-website}"
   local cloud_run_region="${CLOUD_RUN_REGION:-us-central1}"
+  local docker_platform="${DOCKER_PLATFORM:-linux/amd64}"
   local allow_unauthenticated="${ALLOW_UNAUTHENTICATED:-true}"
 
   local tag="${TAG:-}"
   if [[ -z "$tag" ]]; then
     if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
       tag="$(git rev-parse --short HEAD)"
+      if [[ -n "$(git status --porcelain)" ]]; then
+        tag="${tag}-dirty-$(date +%Y%m%d%H%M%S)"
+      fi
     else
       tag="$(date +%Y%m%d%H%M%S)"
     fi
@@ -63,6 +69,7 @@ main() {
   echo "==> Cloud Run service: ${cloud_run_service}"
   echo "==> GCP project: ${GCP_PROJECT}"
   echo "==> Cloud Run region: ${cloud_run_region}"
+  echo "==> Docker platform: ${docker_platform}"
 
   if [[ -n "${DOCKER_PASSWORD:-}" ]]; then
     echo "==> Logging in to Docker Hub as ${DOCKERHUB_USERNAME}"
@@ -71,15 +78,13 @@ main() {
     echo "==> Skipping Docker login. Assuming you are already logged in."
   fi
 
-  echo "==> Building Docker image"
-  docker build \
+  echo "==> Building and pushing Docker image"
+  docker buildx build \
+    --platform "$docker_platform" \
     --tag "$image" \
     --tag "$latest_image" \
+    --push \
     .
-
-  echo "==> Pushing Docker image tags to Docker Hub"
-  docker push "$image"
-  docker push "$latest_image"
 
   local auth_flag="--no-allow-unauthenticated"
   if [[ "$allow_unauthenticated" == "true" ]]; then

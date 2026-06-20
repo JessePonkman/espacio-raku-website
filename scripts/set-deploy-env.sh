@@ -126,6 +126,7 @@ prompt_required "GCP_PROJECT" "GCP project ID"
 prompt_optional "IMAGE_NAME" "Docker Hub image/repository name" "espacio-raku-website"
 prompt_optional "CLOUD_RUN_SERVICE" "Cloud Run service name" "espacio-raku-website"
 prompt_optional "CLOUD_RUN_REGION" "Cloud Run region" "us-central1"
+prompt_optional "DOCKER_PLATFORM" "Docker image target platform(s)" "linux/amd64"
 prompt_optional "ALLOW_UNAUTHENTICATED" "Allow public unauthenticated access? true/false" "true"
 
 prompt_secret_optional "DOCKER_PASSWORD" "Docker Hub access token/password"
@@ -144,6 +145,7 @@ echo "GCP_PROJECT=${GCP_PROJECT}"
 echo "IMAGE_NAME=${IMAGE_NAME}"
 echo "CLOUD_RUN_SERVICE=${CLOUD_RUN_SERVICE}"
 echo "CLOUD_RUN_REGION=${CLOUD_RUN_REGION}"
+echo "DOCKER_PLATFORM=${DOCKER_PLATFORM}"
 echo "ALLOW_UNAUTHENTICATED=${ALLOW_UNAUTHENTICATED}"
 if [[ -n "${DOCKER_PASSWORD:-}" ]]; then
   echo "DOCKER_PASSWORD=(set, hidden)"
@@ -153,5 +155,5 @@ fi
 if [[ -n "${TAG:-}" ]]; then
   echo "TAG=${TAG}"
 else
-  echo "TAG=(not set; deploy script will use current git short SHA)"
+  echo "TAG=(not set; deploy script will use current git short SHA, adding a timestamp when the worktree is dirty)"
 fi

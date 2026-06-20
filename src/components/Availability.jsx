@@ -1,24 +1,8 @@
-import { useState } from 'react';
 import Calendar from './Calendar.jsx';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
 
 export default function Availability() {
-  const [date, setDate] = useState(null);
-
-  const formatted = date
-    ? new Date(date + 'T00:00:00').toLocaleDateString('es-AR', {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      })
-    : null;
-
-  const waUrl = date
-    ? buildWhatsAppUrl(
-        `Hola Judit, estoy viendo la web de Espacio Raku y quisiera consultar disponibilidad. Me interesa el ${formatted}.`
-      )
-    : buildWhatsAppUrl(messages.availability);
+  const waUrl = buildWhatsAppUrl(messages.availability);
 
   return (
     <section className="section availability" id="disponibilidad">
@@ -33,14 +17,7 @@ export default function Availability() {
       </div>
 
       <div className="container avail-inner">
-        <Calendar onSelect={setDate} />
-
-        {date && (
-          <p className="avail-date-hint">
-            Seleccionaste:{' '}
-            <strong>{formatted}</strong>
-          </p>
-        )}
+        <Calendar />
 
         <div className="avail-cta">
           <a

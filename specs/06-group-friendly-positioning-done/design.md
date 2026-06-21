@@ -2,7 +2,7 @@
 
 ## Status
 
-Planning only. No implementation is authorized by this document.
+Implemented on 2026-06-21. Pending review in the next demo.
 
 ## Source
 
@@ -27,11 +27,21 @@ Make multi-unit stays for couples, friends, and groups commercially visible with
 - Design desktop and mobile states together, including loading, missing-content, and error states where relevant.
 - Use semantic, keyboard-accessible interactions and sufficient visual contrast.
 
-## Decisions to close before implementation
+## Confirmed decisions
 
-- Final wording: up to 8, up to 8–9, or inquire for groups.
-- Placement in hero, accommodation intro, experiences intro, or a dedicated group card.
-- Whether an approved group photo is available.
+- Present a combined maximum of up to 9 people by coordinating several accommodations.
+- Clarify that maximum capacity includes an extra bed and is confirmed when arranging the stay.
+- Place a dedicated group panel immediately after accommodations and before availability.
+- Use a typography-only cream/teal treatment without a photo or header navigation link.
+- Address couples and friends with a dedicated WhatsApp inquiry path.
+
+## Approved copy
+
+- Eyebrow: “ESTADÍAS EN GRUPO”.
+- Heading: “Juntos, con espacio para cada uno”.
+- Body: “Ya sea en pareja o con amigos, pueden compartir Espacio Raku coordinando varios alojamientos dentro del complejo. Recibimos grupos de hasta 9 personas, manteniendo la comodidad e independencia de cada espacio.”
+- Capacity note: “La capacidad máxima contempla una cama adicional y se confirma al coordinar la estadía.”
+- CTA: “Consultar para un grupo”.
 
 ## Acceptance criteria
 

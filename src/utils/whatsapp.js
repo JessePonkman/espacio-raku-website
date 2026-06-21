@@ -9,6 +9,8 @@ export const messages = {
   availability: 'Hola Judit, estoy viendo la web de Espacio Raku y quisiera consultar disponibilidad.',
   accommodation: (name) =>
     `Hola Judit, estoy viendo la web de Espacio Raku y quisiera consultar disponibilidad para ${name}.`,
+  group:
+    'Hola Judit, estoy viendo la web de Espacio Raku y quisiera consultar disponibilidad para un grupo. Somos [cantidad] personas y viajaríamos del [fecha de llegada] al [fecha de salida].',
   experience: (name) =>
     `Hola Judit, estoy viendo la web de Espacio Raku y quisiera consultar por la experiencia ${name}.`,
   location:

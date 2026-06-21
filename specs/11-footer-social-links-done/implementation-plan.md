@@ -2,12 +2,15 @@
 
 ## Status
 
-Pending discussion and approval. This plan intentionally does not implement the action point.
+Implemented on 2026-06-20. Pending review in the next demo.
 
-## Preconditions
+## Confirmed contact data
 
-- Client-provided social URLs
-- Global WhatsApp configuration
+- Instagram: `https://www.instagram.com/espacio_raku/`
+- Facebook: `https://www.facebook.com/juditraku/`
+- WhatsApp: `+54 9 2615 78-0242` (stored as `5492615780242` for `wa.me` links)
+- Email remains omitted because no approved address was provided.
+- External contact links open in a new tab with safe `rel` attributes and an accessible label that announces the behavior.
 
 ## Proposed sequence
 
@@ -25,13 +28,13 @@ Pending discussion and approval. This plan intentionally does not implement the 
 
 ## Delivery checklist
 
-- [ ] Required client decisions are recorded.
-- [ ] Content and assets are approved and traceable to their source.
-- [ ] Desktop and mobile states are implemented together.
-- [ ] Accessibility checks cover semantics, focus, labels, and contrast.
-- [ ] External links/embeds have a safe fallback.
-- [ ] Acceptance criteria in `design.md` are demonstrated.
-- [ ] `npm run build` succeeds after implementation.
+- [x] Required client decisions are recorded.
+- [x] Content and assets are approved and traceable to their source.
+- [x] Desktop and mobile states are implemented together.
+- [x] Accessibility checks cover semantics, focus, labels, and contrast.
+- [x] External links/embeds have a safe fallback.
+- [x] Acceptance criteria in `design.md` are demonstrated.
+- [x] `npm run build` succeeds after implementation.
 - [ ] The action point is reviewed in the next demo before production rollout.
 
 ## Risks

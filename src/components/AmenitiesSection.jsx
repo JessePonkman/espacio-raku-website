@@ -1,6 +1,5 @@
 import { amenities } from '../data/amenities.js';
 import {
-  PoolIcon,
   WifiIcon,
   HeartIcon,
   SparkleIcon,
@@ -10,7 +9,6 @@ import {
 } from './icons/Icons.jsx';
 
 const iconMap = {
-  pool: PoolIcon,
   wifi: WifiIcon,
   paw: HeartIcon,
   sparkle: SparkleIcon,
@@ -20,6 +18,9 @@ const iconMap = {
 };
 
 export default function AmenitiesSection() {
+  const highlights = amenities.filter(({ variant }) => variant === 'highlight');
+  const standardAmenities = amenities.filter(({ variant }) => variant === 'standard');
+
   return (
     <section className="section amenities" id="servicios">
       <div className="container amenities-head">
@@ -28,21 +29,33 @@ export default function AmenitiesSection() {
           Servicios e <span className="accent">instalaciones</span>
         </h2>
         <p className="lead">
-          Todo lo que necesitás para una estadía cómoda, sin preocupaciones.
+          Comodidades para una estadía tranquila y espacios para disfrutar el aire libre.
         </p>
       </div>
 
+      <div className="container facility-highlights">
+        {highlights.map(({ id, label, description, image, imageAlt }) => (
+          <article key={id} className="facility-highlight">
+            <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
+            <div className="facility-highlight-body">
+              <h3>{label}</h3>
+              <p>{description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
       <div className="container amenity-grid">
-        {amenities.map(({ id, label, description, icon }) => {
+        {standardAmenities.map(({ id, label, description, icon }) => {
           const Icon = iconMap[icon] ?? LeafIcon;
           return (
-            <div key={id} className="amenity-item">
+            <article key={id} className="amenity-item">
               <div className="amenity-ico" aria-hidden="true">
                 <Icon />
               </div>
-              <h4>{label}</h4>
+              <h3>{label}</h3>
               <p>{description}</p>
-            </div>
+            </article>
           );
         })}
       </div>

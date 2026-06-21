@@ -2,7 +2,8 @@
 
 ## Status
 
-Pending discussion and approval. This plan intentionally does not implement the action point.
+Implemented and validated in headless Chrome on 2026-06-21. Real-device and external
+slow-network spot checks remain pending before production rollout.
 
 ## Preconditions
 
@@ -23,15 +24,31 @@ Pending discussion and approval. This plan intentionally does not implement the 
 - Portrait/landscape and real-device spot check.
 - Keyboard, touch, reduced-motion, and slow-network checks.
 
+## Validation results
+
+- Passed portrait checks at 320, 375, 390, 430, and 768 px without page-level horizontal
+  overflow.
+- Passed landscape checks at 568×320, 667×375, and 844×390; the mobile menu scrolls in
+  short viewports so every item remains reachable.
+- Confirmed the collapsed navigation is fully hidden and non-interactive; the open menu
+  contains the `Consultar` CTA and closes with Escape while returning focus to its toggle.
+- Confirmed calendar, map, floating WhatsApp, accommodation details, and experience details
+  stay within the viewport.
+- Confirmed key controls provide 44 px touch targets and reduced-motion removes continuous
+  animation and smooth scrolling.
+- Completed a section-by-section visual pass at 320 px, including footer and social links.
+- `npm run build` succeeds.
+- Pending: real-device portrait/landscape spot check and throttled external embed behavior.
+
 ## Delivery checklist
 
-- [ ] Required client decisions are recorded.
+- [x] Required client decisions are recorded.
 - [ ] Content and assets are approved and traceable to their source.
-- [ ] Desktop and mobile states are implemented together.
+- [x] Desktop and mobile states are implemented together.
 - [ ] Accessibility checks cover semantics, focus, labels, and contrast.
-- [ ] External links/embeds have a safe fallback.
-- [ ] Acceptance criteria in `design.md` are demonstrated.
-- [ ] `npm run build` succeeds after implementation.
+- [x] External links/embeds have a safe fallback.
+- [x] Acceptance criteria in `design.md` are demonstrated.
+- [x] `npm run build` succeeds after implementation.
 - [ ] The action point is reviewed in the next demo before production rollout.
 
 ## Risks

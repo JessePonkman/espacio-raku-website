@@ -1,11 +1,5 @@
 export const faq = [
   {
-    id: 'mascotas',
-    question: '¿Aceptan mascotas?',
-    answer:
-      'Sí, algunos de nuestros alojamientos son pet friendly. Consultanos antes de reservar para confirmar disponibilidad y las condiciones para tu mascota.',
-  },
-  {
     id: 'disponibilidad',
     question: '¿Cómo consulto disponibilidad?',
     answer:
@@ -18,28 +12,33 @@ export const faq = [
       'Sí, WhatsApp es nuestro canal principal. Escribinos con tus fechas, la cantidad de personas y el alojamiento que te interesa, y coordinamos todo en forma directa.',
   },
   {
+    id: 'mascotas',
+    question: '¿Aceptan mascotas?',
+    answer: 'Sí, tu mascota es bienvenida en todo Espacio Raku.',
+  },
+  {
     id: 'checkin',
     question: '¿Cuáles son los horarios de check-in y check-out?',
     answer:
-      'Check-in desde las 15:00 hs y check-out hasta las 11:00 hs. Si necesitás flexibilidad, avisanos con anticipación y hacemos lo posible para acomodarnos.',
+      'El check-in es desde las 14:00 hs y el check-out hasta las 11:00 hs.',
   },
   {
     id: 'piscina',
     question: '¿Hay piscina?',
     answer:
-      'Sí, contamos con piscina de uso compartido para todos los huéspedes, rodeada de jardín. Podés disfrutarla durante toda tu estadía.',
+      'Sí, contamos con una piscina de temporada para disfrutar durante los meses de verano.',
   },
   {
-    id: 'desayuno',
-    question: '¿Ofrecen desayuno?',
+    id: 'limpieza',
+    question: '¿Hay servicio de limpieza durante la estadía?',
     answer:
-      'Consultanos sobre las opciones disponibles al momento de hacer tu reserva. Trabajamos con alternativas según temporada y disponibilidad.',
+      'Para estadías de más de 7 días, se puede coordinar una limpieza a mitad de la estadía.',
   },
   {
     id: 'ubicacion',
-    question: '¿Dónde está ubicado Espacio Raku?',
+    question: '¿Dónde está Espacio Raku? ¿Hay comercios cerca?',
     answer:
-      'Estamos en Chacras de Coria, Mendoza: una zona tranquila y residencial a pocos minutos del centro y de los principales viñedos. Escribinos por WhatsApp y te mandamos las indicaciones exactas.',
+      'Estamos en una zona residencial tranquila de Chacras de Coria, cerca de Rodríguez Viñedo y con fácil acceso a centros comerciales y supermercados. Escribinos por WhatsApp y te mandamos las indicaciones exactas.',
   },
   {
     id: 'experiencias',

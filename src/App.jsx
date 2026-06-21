@@ -2,6 +2,7 @@ import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import AboutSection from './components/AboutSection.jsx';
 import AccommodationsSection from './components/AccommodationsSection.jsx';
+import GroupStaySection from './components/GroupStaySection.jsx';
 import Availability from './components/Availability.jsx';
 import AmenitiesSection from './components/AmenitiesSection.jsx';
 import ExperiencesSection from './components/ExperiencesSection.jsx';
@@ -19,6 +20,7 @@ export default function App() {
         <Hero />
         <AboutSection />
         <AccommodationsSection />
+        <GroupStaySection />
         <Availability />
         <AmenitiesSection />
         <ExperiencesSection />

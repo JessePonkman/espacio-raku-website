@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
 
 const links = [
@@ -11,7 +11,21 @@ const links = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef(null);
   const close = () => setOpen(false);
+
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key !== 'Escape') return;
+      setOpen(false);
+      menuButtonRef.current?.focus();
+    };
+
+    document.addEventListener('keydown', closeOnEscape);
+    return () => document.removeEventListener('keydown', closeOnEscape);
+  }, [open]);
 
   return (
     <header className="site-header" id="top">
@@ -20,7 +34,7 @@ export default function Header() {
           <img src="/assets/brand/logo-color.png" alt="Espacio Raku" className="logo-img" />
         </a>
 
-        <nav className={`nav ${open ? 'open' : ''}`} aria-label="Navegación principal">
+        <nav id="primary-navigation" className={`nav ${open ? 'open' : ''}`} aria-label="Navegación principal">
           {links.map((l) => (
             <a key={l.href} href={l.href} onClick={close}>
               {l.label}
@@ -39,9 +53,11 @@ export default function Header() {
         </nav>
 
         <button
+          ref={menuButtonRef}
           className="menu-btn"
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={open}
+          aria-controls="primary-navigation"
           onClick={() => setOpen((v) => !v)}
         >
           <span />

@@ -2,7 +2,8 @@
 
 ## Status
 
-Planning only. No implementation is authorized by this document.
+Implemented and validated in headless Chrome. A real-device spot check remains before
+production rollout.
 
 ## Source
 
@@ -27,11 +28,13 @@ Treat mobile quality as a cross-cutting release gate for the revised demo rather
 - Design desktop and mobile states together, including loading, missing-content, and error states where relevant.
 - Use semantic, keyboard-accessible interactions and sufficient visual contrast.
 
-## Decisions to close before implementation
+## Resolved responsive decisions
 
-- Supported minimum viewport width.
-- Breakpoint strategy and whether any layouts require content reordering.
-- How carousels/embeds degrade when space or motion is constrained.
+- The supported minimum viewport width is 320 px.
+- The primary navigation collapses at 840 px; section grids stack or become horizontal,
+  scroll-snap carousels at 760 px.
+- Calendar and map embeds stay inside their containers and retain loading/fallback states.
+- Motion is effectively disabled when `prefers-reduced-motion: reduce` is active.
 
 ## Acceptance criteria
 

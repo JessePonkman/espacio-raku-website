@@ -31,7 +31,7 @@ export default function Footer() {
               href={site.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Seguinos en Instagram"
+              aria-label="Seguinos en Instagram (se abre en una nueva pestaña)"
             >
               <InstagramIcon />
             </a>
@@ -39,7 +39,7 @@ export default function Footer() {
               href={site.facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Seguinos en Facebook"
+              aria-label="Seguinos en Facebook (se abre en una nueva pestaña)"
             >
               <FacebookIcon />
             </a>
@@ -47,7 +47,7 @@ export default function Footer() {
               href={buildWhatsAppUrl(messages.general)}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Escribinos por WhatsApp"
+              aria-label="Escribinos por WhatsApp (se abre en una nueva pestaña)"
             >
               <WhatsAppIcon width="18" height="18" />
             </a>
@@ -69,7 +69,7 @@ export default function Footer() {
             href={buildWhatsAppUrl(messages.availability)}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Consultar disponibilidad por WhatsApp"
+            aria-label="Consultar disponibilidad por WhatsApp (se abre en una nueva pestaña)"
           >
             <WhatsAppIcon /> Consultar disponibilidad
           </a>

@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { PinIcon } from './icons/Icons.jsx';
 import { site } from '../data/site.js';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
 
 export default function LocationSection() {
+  const [mapStatus, setMapStatus] = useState('loading');
+
   return (
     <section className="section location" id="ubicacion">
       <div className="container loc-grid">
@@ -30,24 +33,51 @@ export default function LocationSection() {
           </a>
         </div>
 
-        <div
-          className="map-card"
-          role="img"
-          aria-label="Mapa de ubicación: Chacras de Coria, Mendoza"
-        >
-          <div className="map-pin" aria-hidden="true">
-            <PinIcon />
+        <figure className={`map-card map-card--${mapStatus}`}>
+          <div className="map-frame">
+            {mapStatus !== 'loaded' && (
+              <div
+                className="map-status"
+                role={mapStatus === 'error' ? 'alert' : 'status'}
+                aria-live="polite"
+              >
+                <div className="map-pin" aria-hidden="true">
+                  <PinIcon />
+                </div>
+                <strong>
+                  {mapStatus === 'error' ? 'No pudimos cargar el mapa' : 'Cargando mapa…'}
+                </strong>
+                {mapStatus === 'error' && (
+                  <p>Podés abrir la ubicación directamente en Google Maps.</p>
+                )}
+              </div>
+            )}
+            <iframe
+              className="map-embed"
+              src={site.googleMapsEmbedUrl}
+              title="Mapa de Espacio Raku en Chacras de Coria, Mendoza"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              onLoad={() => setMapStatus('loaded')}
+              onError={() => setMapStatus('error')}
+            />
           </div>
-          <strong>Espacio Raku</strong>
-          <p>Chacras de Coria, Mendoza, Argentina</p>
-          <a
-            href={site.googleMapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver en Google Maps →
-          </a>
-        </div>
+          <figcaption className="map-caption">
+            <div>
+              <strong>Espacio Raku</strong>
+              <p>Chacras de Coria, Mendoza, Argentina</p>
+            </div>
+            <a
+              href={site.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir la ubicación de Espacio Raku en Google Maps (se abre en una pestaña nueva)"
+            >
+              Ver en Google Maps →
+            </a>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

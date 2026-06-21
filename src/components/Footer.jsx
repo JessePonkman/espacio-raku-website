@@ -23,8 +23,8 @@ export default function Footer() {
             />
           </a>
           <p>
-            Alojamientos cálidos en Chacras de Coria, Mendoza. Piscina, tranquilidad y
-            experiencias para disfrutar Mendoza de otra manera.
+            Cabañas y alojamientos temporarios en Chacras de Coria, Luján de Cuyo,
+            Mendoza. Piscina, tranquilidad y reserva directa.
           </p>
           <div className="socials">
             <a
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="foot-col">
-          <h4>Navegación</h4>
+          <h2>Navegación</h2>
           {navLinks.map((l) => (
             <a key={l.href} href={l.href}>
               {l.label}
@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
 
         <div className="foot-col">
-          <h4>Contacto</h4>
+          <h2>Contacto</h2>
           <a
             href={buildWhatsAppUrl(messages.availability)}
             target="_blank"

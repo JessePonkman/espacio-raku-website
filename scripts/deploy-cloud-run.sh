@@ -16,11 +16,13 @@ set -Eeuo pipefail
 #   DOCKER_PLATFORM      Target image platform(s). Default: linux/amd64
 #   ALLOW_UNAUTHENTICATED Whether to expose the service publicly. Default: true
 #   DOCKER_PASSWORD      If set, script logs in to Docker Hub non-interactively
+#   SITE_URL             Final public origin used for canonical, social, and sitemap URLs
 #
 # Example:
 #   DOCKERHUB_USERNAME=myuser \
 #   GCP_PROJECT=my-gcp-project \
 #   CLOUD_RUN_REGION=us-central1 \
+#   SITE_URL=https://www.example.com \
 #   ./scripts/deploy-cloud-run.sh
 
 require_command() {
@@ -81,6 +83,7 @@ main() {
   echo "==> Building and pushing Docker image"
   docker buildx build \
     --platform "$docker_platform" \
+    --build-arg "SITE_URL=${SITE_URL:-}" \
     --tag "$image" \
     --tag "$latest_image" \
     --push \

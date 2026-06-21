@@ -1,5 +1,11 @@
 export const faq = [
   {
+    id: 'tipo-alojamiento',
+    question: '¿Qué tipo de alojamiento ofrece Espacio Raku?',
+    answer:
+      'Ofrecemos tres alojamientos temporarios en Chacras de Coria: dos lofts para dos personas y un departamento para hasta cuatro personas. Todas las opciones tienen baño privado, climatización, WiFi y acceso a la piscina de temporada.',
+  },
+  {
     id: 'disponibilidad',
     question: '¿Cómo consulto disponibilidad?',
     answer:

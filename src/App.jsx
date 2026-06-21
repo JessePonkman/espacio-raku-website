@@ -11,10 +11,12 @@ import TestimonialsSection from './components/TestimonialsSection.jsx';
 import FAQSection from './components/FAQ.jsx';
 import Footer from './components/Footer.jsx';
 import WhatsAppFloat from './components/WhatsAppFloat.jsx';
+import SeoStructuredData from './components/SeoStructuredData.jsx';
 
 export default function App() {
   return (
     <>
+      <SeoStructuredData />
       <Header />
       <main>
         <Hero />

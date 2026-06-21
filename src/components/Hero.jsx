@@ -3,18 +3,27 @@ import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
 export default function Hero() {
   return (
     <section className="hero" id="inicio">
-      <div className="hero-bg" role="img" aria-label="Piscina y jardín de Espacio Raku" />
+      <img
+        className="hero-bg"
+        src="/assets/photos/hero-piscina.jpg"
+        alt="Piscina y jardín de Espacio Raku en Chacras de Coria"
+        width="1600"
+        height="1067"
+        fetchpriority="high"
+      />
       <div className="hero-overlay" aria-hidden="true" />
       <div className="container hero-inner">
         <img
           src="/assets/brand/logo-blanco.png"
           alt="Espacio Raku"
           className="hero-logo"
+          width="5226"
+          height="2730"
         />
-        <h1>Un lugar para bajar el ritmo en Chacras de Coria</h1>
+        <h1>Cabañas y alojamiento en Chacras de Coria, Mendoza</h1>
         <p className="hero-sub">
-          Alojamientos cálidos, piscina, tranquilidad y experiencias para disfrutar
-          Mendoza de otra manera.
+          Lofts y departamento cálidos con piscina y jardín, en Luján de Cuyo. Un
+          hospedaje tranquilo para disfrutar Mendoza de otra manera.
         </p>
         <div className="hero-ctas">
           <a

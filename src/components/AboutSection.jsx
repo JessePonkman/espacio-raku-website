@@ -43,9 +43,9 @@ export default function AboutSection() {
           </h2>
           <p>
             Espacio Raku nació de las ganas de crear algo distinto: un lugar en el que cada
-            detalle invite a bajar el ritmo. Ubicado en Chacras de Coria, rodeado de viñedos
-            y tranquilidad, es un espacio pensado para quienes buscan una estadía cálida,
-            personal y lejos de lo genérico.
+            detalle invite a bajar el ritmo. Este alojamiento temporario está en Chacras de
+            Coria, Luján de Cuyo, rodeado de viñedos y tranquilidad. Es un espacio pensado
+            para quienes buscan una estadía cálida, personal y lejos de lo genérico.
           </p>
           <ul className="about-list">
             {highlights.map(({ Icon, text }) => (

@@ -17,13 +17,13 @@ export default function AccommodationsSection() {
   return (
     <section className="section accommodations" id="alojamientos">
       <div className="container accommodations-head">
-        <span className="eyebrow">ALOJAMIENTOS</span>
+        <span className="eyebrow">CABAÑAS Y ALOJAMIENTOS</span>
         <h2>
-          Los <span className="accent">espacios</span>
+          Lofts y <span className="accent">departamento</span>
         </h2>
         <p className="lead">
-          Cada alojamiento está pensado para que te sientas como en casa, con la calidez de
-          un lugar cuidado y el entorno de Chacras de Coria.
+          Tres opciones de hospedaje y alquiler temporario para sentirte como en casa, con
+          la calidez de un lugar cuidado y el entorno de Chacras de Coria.
         </p>
       </div>
 

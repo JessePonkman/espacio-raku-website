@@ -12,11 +12,12 @@ export default function LocationSection() {
         <div className="loc-text">
           <span className="eyebrow">DÓNDE ESTAMOS</span>
           <h2>
-            Chacras de Coria, <span className="accent">Mendoza</span>
+            Hospedaje en Chacras de Coria, <span className="accent">Luján de Cuyo</span>
           </h2>
           <p>
-            Espacio Raku está en el corazón de Chacras de Coria: una zona residencial
-            tranquila, rodeada de viñedos y a pocos minutos del centro de Mendoza.
+            Espacio Raku está en Chacras de Coria, Mendoza: una zona residencial tranquila
+            del departamento de Luján de Cuyo, rodeada de viñedos y a pocos minutos del
+            centro de Mendoza.
           </p>
           <p>
             Fácil acceso en auto, remis o transporte privado desde el aeropuerto

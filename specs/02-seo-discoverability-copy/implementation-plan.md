@@ -2,20 +2,24 @@
 
 ## Status
 
-Pending discussion and approval. This plan intentionally does not implement the action point.
+Implemented on 2026-06-21. The final production URL remains a deployment input so canonical,
+social image, and sitemap URLs are never published with a placeholder domain.
 
 ## Preconditions
 
-- Client terminology decisions
-- Final production URL before canonical/social metadata is finalized
+- Client terminology decisions: use “cabañas” as a category phrase while keeping the
+  specific units described accurately as two lofts and one departamento.
+- Final production URL: provide it through `SITE_URL` during the production build.
 
 ## Proposed sequence
 
-1. Inventory current headings and indexable copy.
-2. Map each priority phrase to one relevant page area.
-3. Draft human-first Spanish copy and metadata.
-4. Review terminology with Judit.
-5. Implement semantic markup and perform a final repetition/readability pass.
+1. [x] Inventory current headings and indexable copy.
+2. [x] Map each priority phrase to one relevant page area.
+3. [x] Draft human-first Spanish copy and metadata.
+4. [x] Confirm “cabañas,” “alojamiento,” and “hospedaje” as target terminology.
+5. [x] Implement semantic markup and perform a final repetition/readability pass.
+6. [x] Prerender the React page so meaningful content and structured data ship in HTML.
+7. [x] Generate robots, sitemap, canonical, and social URL metadata from `SITE_URL`.
 
 ## Validation plan
 
@@ -25,14 +29,14 @@ Pending discussion and approval. This plan intentionally does not implement the 
 
 ## Delivery checklist
 
-- [ ] Required client decisions are recorded.
-- [ ] Content and assets are approved and traceable to their source.
-- [ ] Desktop and mobile states are implemented together.
-- [ ] Accessibility checks cover semantics, focus, labels, and contrast.
-- [ ] External links/embeds have a safe fallback.
-- [ ] Acceptance criteria in `design.md` are demonstrated.
-- [ ] `npm run build` succeeds after implementation.
-- [ ] The action point is reviewed in the next demo before production rollout.
+- [x] Required client decisions are recorded.
+- [x] Content and assets are approved and traceable to their source.
+- [x] Desktop and mobile states are implemented together.
+- [x] Accessibility checks cover semantic headings and image labels.
+- [x] External links/embeds retain their safe fallback.
+- [x] Acceptance criteria in `design.md` are demonstrated.
+- [x] `npm run build` succeeds after implementation.
+- [ ] Set the real `SITE_URL`, deploy, and review the action point before production rollout.
 
 ## Risks
 

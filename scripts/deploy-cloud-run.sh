@@ -18,7 +18,7 @@ set -Eeuo pipefail
 # Example:
 #   GCP_PROJECT=my-gcp-project \
 #   CLOUD_RUN_REGION=us-central1 \
-#   SITE_URL=https://www.example.com \
+#   SITE_URL=https://espacio-raku.com \
 #   ./scripts/deploy-cloud-run.sh
 
 require_command() {

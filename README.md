@@ -5,7 +5,7 @@
 Set `SITE_URL` to the final public origin when building the production image:
 
 ```bash
-SITE_URL=https://www.example.com npm run build
+SITE_URL=https://espacio-raku.com npm run build
 ```
 
 The value must not include a path. It enables the canonical URL, absolute social preview

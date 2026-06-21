@@ -38,16 +38,6 @@ read_line() {
   IFS= read -r REPLY_VALUE
 }
 
-read_secret() {
-  local prompt="$1"
-  REPLY_VALUE=""
-  printf '%s' "$prompt"
-  stty -echo 2>/dev/null || true
-  IFS= read -r REPLY_VALUE
-  stty echo 2>/dev/null || true
-  echo
-}
-
 prompt_required() {
   local var_name="$1"
   local label="$2"
@@ -90,46 +80,15 @@ prompt_optional() {
   export "${var_name}=${value}"
 }
 
-prompt_secret_optional() {
-  local var_name="$1"
-  local label="$2"
-  local current_value
-  local value=""
-  local prompt_suffix=""
-
-  current_value="$(get_var_value "$var_name")"
-
-  if [[ -n "$current_value" ]]; then
-    prompt_suffix=" [already set, press Enter to keep]"
-  else
-    prompt_suffix=" [optional, press Enter to skip]"
-  fi
-
-  read_secret "${label}${prompt_suffix}: "
-  value="$REPLY_VALUE"
-
-  if [[ -n "$value" ]]; then
-    export "${var_name}=${value}"
-  elif [[ -n "$current_value" ]]; then
-    export "${var_name}=${current_value}"
-  else
-    unset "$var_name"
-  fi
-}
-
 echo "Setting deployment environment variables..."
 echo
 
-prompt_required "DOCKERHUB_USERNAME" "Docker Hub username or organization"
 prompt_required "GCP_PROJECT" "GCP project ID"
 
-prompt_optional "IMAGE_NAME" "Docker Hub image/repository name" "espacio-raku-website"
 prompt_optional "CLOUD_RUN_SERVICE" "Cloud Run service name" "espacio-raku-website"
 prompt_optional "CLOUD_RUN_REGION" "Cloud Run region" "us-central1"
 prompt_optional "DOCKER_PLATFORM" "Docker image target platform(s)" "linux/amd64"
 prompt_optional "ALLOW_UNAUTHENTICATED" "Allow public unauthenticated access? true/false" "true"
-
-prompt_secret_optional "DOCKER_PASSWORD" "Docker Hub access token/password"
 
 read_line "Custom image tag [optional, press Enter to use git SHA]: "
 if [[ -n "$REPLY_VALUE" ]]; then
@@ -140,18 +99,13 @@ fi
 
 echo
 echo "Deployment environment variables loaded:"
-echo "DOCKERHUB_USERNAME=${DOCKERHUB_USERNAME}"
 echo "GCP_PROJECT=${GCP_PROJECT}"
-echo "IMAGE_NAME=${IMAGE_NAME}"
+echo "ARTIFACT_REGISTRY_REPOSITORY=espacio-raku (fixed)"
+echo "ARTIFACT_REGISTRY_IMAGE=espacio-raku-website (fixed)"
 echo "CLOUD_RUN_SERVICE=${CLOUD_RUN_SERVICE}"
 echo "CLOUD_RUN_REGION=${CLOUD_RUN_REGION}"
 echo "DOCKER_PLATFORM=${DOCKER_PLATFORM}"
 echo "ALLOW_UNAUTHENTICATED=${ALLOW_UNAUTHENTICATED}"
-if [[ -n "${DOCKER_PASSWORD:-}" ]]; then
-  echo "DOCKER_PASSWORD=(set, hidden)"
-else
-  echo "DOCKER_PASSWORD=(not set; deploy script will assume docker login was already done)"
-fi
 if [[ -n "${TAG:-}" ]]; then
   echo "TAG=${TAG}"
 else

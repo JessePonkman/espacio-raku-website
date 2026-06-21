@@ -1,25 +1,21 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-# Build this Vite static site image, push it to Docker Hub, then deploy it to GCP Cloud Run.
+# Build this Vite static site image, push it to GCP Artifact Registry, then deploy it to Cloud Run.
 #
 # Required env vars:
-#   DOCKERHUB_USERNAME   Your Docker Hub username/org
 #   GCP_PROJECT          Your Google Cloud project ID
 #
 # Optional env vars:
-#   IMAGE_NAME           Docker Hub repository name. Default: espacio-raku-website
 #   TAG                  Image tag. Default: current git short SHA, with a timestamp
 #                        suffix when the worktree is dirty, or timestamp if not in git
 #   CLOUD_RUN_SERVICE    Cloud Run service name. Default: espacio-raku-website
 #   CLOUD_RUN_REGION     Cloud Run region. Default: us-central1
 #   DOCKER_PLATFORM      Target image platform(s). Default: linux/amd64
 #   ALLOW_UNAUTHENTICATED Whether to expose the service publicly. Default: true
-#   DOCKER_PASSWORD      If set, script logs in to Docker Hub non-interactively
 #   SITE_URL             Final public origin used for canonical, social, and sitemap URLs
 #
 # Example:
-#   DOCKERHUB_USERNAME=myuser \
 #   GCP_PROJECT=my-gcp-project \
 #   CLOUD_RUN_REGION=us-central1 \
 #   SITE_URL=https://www.example.com \
@@ -39,14 +35,75 @@ require_env() {
   fi
 }
 
+ensure_artifact_registry_api() {
+  local enabled_api
+  local api_service="artifactregistry.googleapis.com"
+
+  echo "==> Checking Artifact Registry API"
+  if ! enabled_api="$(gcloud services list \
+    --enabled \
+    --project "$GCP_PROJECT" \
+    --filter "config.name=${api_service}" \
+    --format 'value(config.name)')"; then
+    echo "Error: could not check the Artifact Registry API status." >&2
+    exit 1
+  fi
+
+  if [[ "$enabled_api" != "$api_service" ]]; then
+    echo "==> Enabling Artifact Registry API"
+    gcloud services enable "$api_service" \
+      --project "$GCP_PROJECT" \
+      --quiet
+  fi
+}
+
+ensure_artifact_registry_repository() {
+  local repository_name="$1"
+  local repository_location="$2"
+  local repository_error
+  local repository_format
+  local error_file
+
+  echo "==> Checking Artifact Registry repository: ${repository_name}"
+  error_file="$(mktemp)"
+  if repository_format="$(gcloud artifacts repositories describe "$repository_name" \
+    --project "$GCP_PROJECT" \
+    --location "$repository_location" \
+    --format 'value(format)' 2>"$error_file")"; then
+    rm -f "$error_file"
+    if [[ "$repository_format" != "DOCKER" ]]; then
+      echo "Error: Artifact Registry repository '${repository_name}' exists in '${repository_location}' but has format '${repository_format:-unknown}', not DOCKER." >&2
+      exit 1
+    fi
+    return
+  fi
+
+  repository_error="$(cat "$error_file")"
+  rm -f "$error_file"
+
+  if [[ "$repository_error" != *"NOT_FOUND"* && "$repository_error" != *"not found"* ]]; then
+    echo "Error: could not inspect Artifact Registry repository '${repository_name}'." >&2
+    echo "$repository_error" >&2
+    exit 1
+  fi
+
+  echo "==> Creating Artifact Registry repository: ${repository_name}"
+  gcloud artifacts repositories create "$repository_name" \
+    --project "$GCP_PROJECT" \
+    --location "$repository_location" \
+    --repository-format docker \
+    --description "Docker images for Espacio Raku" \
+    --quiet
+}
+
 main() {
   require_command docker
   require_command gcloud
 
-  require_env DOCKERHUB_USERNAME
   require_env GCP_PROJECT
 
-  local image_name="${IMAGE_NAME:-espacio-raku-website}"
+  local repository_name="espacio-raku"
+  local image_name="espacio-raku-website"
   local cloud_run_service="${CLOUD_RUN_SERVICE:-espacio-raku-website}"
   local cloud_run_region="${CLOUD_RUN_REGION:-us-central1}"
   local docker_platform="${DOCKER_PLATFORM:-linux/amd64}"
@@ -64,21 +121,23 @@ main() {
     fi
   fi
 
-  local image="docker.io/${DOCKERHUB_USERNAME}/${image_name}:${tag}"
-  local latest_image="docker.io/${DOCKERHUB_USERNAME}/${image_name}:latest"
+  local registry_host="${cloud_run_region}-docker.pkg.dev"
+  local image_base="${registry_host}/${GCP_PROJECT}/${repository_name}/${image_name}"
+  local image="${image_base}:${tag}"
+  local latest_image="${image_base}:latest"
 
-  echo "==> Docker image: ${image}"
+  echo "==> Artifact Registry image: ${image}"
+  echo "==> Artifact Registry repository: ${repository_name}"
   echo "==> Cloud Run service: ${cloud_run_service}"
   echo "==> GCP project: ${GCP_PROJECT}"
   echo "==> Cloud Run region: ${cloud_run_region}"
   echo "==> Docker platform: ${docker_platform}"
 
-  if [[ -n "${DOCKER_PASSWORD:-}" ]]; then
-    echo "==> Logging in to Docker Hub as ${DOCKERHUB_USERNAME}"
-    printf '%s' "$DOCKER_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
-  else
-    echo "==> Skipping Docker login. Assuming you are already logged in."
-  fi
+  ensure_artifact_registry_api
+  ensure_artifact_registry_repository "$repository_name" "$cloud_run_region"
+
+  echo "==> Configuring Docker authentication for Artifact Registry"
+  gcloud auth configure-docker "$registry_host" --quiet
 
   echo "==> Building and pushing Docker image"
   docker buildx build \

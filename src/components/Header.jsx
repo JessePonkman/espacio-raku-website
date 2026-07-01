@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
+import OptimizedImage, { LOGO_WIDTHS } from './OptimizedImage.jsx';
 
 const links = [
   { href: '#alojamientos', label: 'Alojamientos' },
@@ -31,7 +32,13 @@ export default function Header() {
     <header className="site-header" id="top">
       <div className="container header-inner">
         <a href="#top" aria-label="Espacio Raku, volver al inicio">
-          <img src="/assets/brand/logo-color.png" alt="Espacio Raku" className="logo-img" />
+          <OptimizedImage
+            src="/assets/brand/logo-color.png"
+            alt="Espacio Raku"
+            className="logo-img"
+            widths={LOGO_WIDTHS}
+            sizes="(max-width: 840px) 130px, 160px"
+          />
         </a>
 
         <nav id="primary-navigation" className={`nav ${open ? 'open' : ''}`} aria-label="Navegación principal">

@@ -9,7 +9,7 @@ set -Eeuo pipefail
 # Optional env vars:
 #   IMAGE_NAME       Default: espacio-raku-website-local
 #   CONTAINER_NAME   Default: espacio-raku-website-local
-#   HOST_PORT        Default: 8080
+#   HOST_PORT        Default: 5173
 #   CONTAINER_PORT   Default: 80
 #   NO_CACHE         Set to true to build without Docker cache. Default: false
 #
@@ -29,7 +29,7 @@ main() {
 
   local image_name="${IMAGE_NAME:-espacio-raku-website-local}"
   local container_name="${CONTAINER_NAME:-espacio-raku-website-local}"
-  local host_port="${HOST_PORT:-8080}"
+  local host_port="${HOST_PORT:-5173}"
   local container_port="${CONTAINER_PORT:-80}"
   local no_cache="${NO_CACHE:-false}"
 
@@ -47,6 +47,7 @@ main() {
 
   echo "==> Starting container: ${container_name}"
   docker run \
+    --detach \
     --rm \
     --name "$container_name" \
     --publish "${host_port}:${container_port}" \

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { experiences } from '../data/experiences.js';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
 import ImageCarousel from './ImageCarousel.jsx';
+import OptimizedImage, { PHOTO_WIDTHS } from './OptimizedImage.jsx';
 
 const statusLabel = {
   available: 'Disponible',
@@ -54,9 +55,11 @@ export default function ExperiencesSection() {
               >
                 <div className="exp-summary">
                   <div className="exp-card-img">
-                    <img
+                    <OptimizedImage
                       src={experience.image}
                       alt={experience.title}
+                      widths={PHOTO_WIDTHS}
+                      sizes="(max-width: 760px) 82vw, 50vw"
                       loading="lazy"
                     />
                     <span className={`exp-status ${statusClass[experience.status]}`}>

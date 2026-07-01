@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from './icons/Icons.jsx';
+import OptimizedImage, { PHOTO_WIDTHS } from './OptimizedImage.jsx';
 
 export default function ImageCarousel({
   images,
@@ -51,11 +52,13 @@ export default function ImageCarousel({
       }}
     >
       <div className="image-carousel-viewport" aria-live="polite">
-        <img
+        <OptimizedImage
           key={currentSlide.src}
           className="image-carousel-photo"
           src={currentSlide.src}
           alt={currentSlide.alt ?? ''}
+          widths={PHOTO_WIDTHS}
+          sizes="(max-width: 760px) calc(100vw - 64px), 50vw"
           loading="lazy"
         />
       </div>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { accommodations } from '../data/accommodations.js';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
 import ImageCarousel from './ImageCarousel.jsx';
+import OptimizedImage, { PHOTO_WIDTHS } from './OptimizedImage.jsx';
 
 export default function AccommodationsSection() {
   const [openAccommodation, setOpenAccommodation] = useState(null);
@@ -41,7 +42,13 @@ export default function AccommodationsSection() {
               >
                 <div className="accom-summary">
                   <div className="accom-img">
-                    <img src={accommodation.image} alt={accommodation.name} loading="lazy" />
+                    <OptimizedImage
+                      src={accommodation.image}
+                      alt={accommodation.name}
+                      widths={PHOTO_WIDTHS}
+                      sizes="(max-width: 760px) 82vw, (max-width: 980px) 50vw, 33vw"
+                      loading="lazy"
+                    />
                   </div>
                   <div className="accom-body">
                     <h3>{accommodation.name}</h3>

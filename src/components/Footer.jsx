@@ -1,6 +1,7 @@
 import { InstagramIcon, FacebookIcon, WhatsAppIcon, PinIcon } from './icons/Icons.jsx';
 import { site } from '../data/site.js';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
+import OptimizedImage, { LOGO_WIDTHS } from './OptimizedImage.jsx';
 
 const navLinks = [
   { href: '#alojamientos', label: 'Alojamientos' },
@@ -16,10 +17,13 @@ export default function Footer() {
       <div className="container footer-grid">
         <div className="foot-brand">
           <a href="#top" aria-label="Espacio Raku, volver al inicio">
-            <img
+            <OptimizedImage
               src="/assets/brand/logo-blanco.png"
               alt="Espacio Raku"
               className="logo-img-footer"
+              widths={LOGO_WIDTHS}
+              sizes="140px"
+              loading="lazy"
             />
           </a>
           <p>

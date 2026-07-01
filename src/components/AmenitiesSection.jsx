@@ -7,6 +7,7 @@ import {
   WindIcon,
   LeafIcon,
 } from './icons/Icons.jsx';
+import OptimizedImage, { PHOTO_WIDTHS } from './OptimizedImage.jsx';
 
 const iconMap = {
   wifi: WifiIcon,
@@ -36,7 +37,13 @@ export default function AmenitiesSection() {
       <div className="container facility-highlights">
         {highlights.map(({ id, label, description, image, imageAlt }) => (
           <article key={id} className="facility-highlight">
-            <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
+            <OptimizedImage
+              src={image}
+              alt={imageAlt}
+              widths={PHOTO_WIDTHS}
+              sizes="(max-width: 760px) calc(100vw - 32px), 33vw"
+              loading="lazy"
+            />
             <div className="facility-highlight-body">
               <h3>{label}</h3>
               <p>{description}</p>

@@ -1,24 +1,28 @@
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
+import OptimizedImage, { LOGO_WIDTHS, PHOTO_WIDTHS } from './OptimizedImage.jsx';
 
 export default function Hero() {
   return (
     <section className="hero" id="inicio">
-      <img
+      <OptimizedImage
         className="hero-bg"
         src="/assets/photos/hero-piscina.jpg"
         alt="Piscina y jardín de Espacio Raku en Chacras de Coria"
-        width="1600"
-        height="1067"
-        fetchpriority="high"
+        widths={PHOTO_WIDTHS}
+        sizes="100vw"
+        loading="eager"
+        decoding="sync"
+        fetchPriority="high"
       />
       <div className="hero-overlay" aria-hidden="true" />
       <div className="container hero-inner">
-        <img
+        <OptimizedImage
           src="/assets/brand/logo-blanco.png"
           alt="Espacio Raku"
           className="hero-logo"
-          width="5226"
-          height="2730"
+          widths={LOGO_WIDTHS}
+          sizes="(max-width: 760px) 184px, 240px"
+          loading="eager"
         />
         <h1>Cabañas y alojamiento en Chacras de Coria, Mendoza</h1>
         <p className="hero-sub">

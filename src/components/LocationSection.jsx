@@ -73,7 +73,7 @@ export default function LocationSection() {
               href={site.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Abrir la ubicación de Espacio Raku en Google Maps (se abre en una pestaña nueva)"
+              aria-label="Ver en Google Maps (se abre en una pestaña nueva)"
             >
               Ver en Google Maps →
             </a>

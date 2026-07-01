@@ -1,8 +1,58 @@
 /* === ESPACIO RAKU — DESIGN SYSTEM === */
 
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/assets/optimized/v1/assets/fonts/inter-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("/assets/optimized/v1/assets/fonts/inter-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("/assets/optimized/v1/assets/fonts/inter-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/assets/optimized/v1/assets/fonts/inter-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/assets/optimized/v1/assets/fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("/assets/optimized/v1/assets/fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2");
+}
+
 :root {
   --raku-orange: #EC813D;
+  --raku-orange-text: #9B4815;
   --raku-teal: #4FB5AF;
+  --raku-teal-text: #276B68;
   --raku-teal-soft: #DFF3F1;
   --raku-olive: #9CA273;
   --raku-ink: #2B2A28;
@@ -14,7 +64,6 @@
   --raku-white: #FFFFFF;
 
   --font-display: "Cormorant Garamond", "Libre Baskerville", Georgia, serif;
-  --font-script: "Courgette", cursive;
   --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --radius-sm: 12px;
@@ -90,10 +139,10 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--raku-teal);
+  color: var(--raku-teal-text);
   margin-bottom: 0.8rem;
 }
-.accent { color: var(--raku-orange); }
+.accent { color: var(--raku-orange-text); }
 
 /* === BUTTONS === */
 .btn {
@@ -125,7 +174,7 @@ p:last-child { margin-bottom: 0; }
 }
 .btn-secondary {
   background: transparent;
-  color: var(--raku-orange);
+  color: var(--raku-orange-text);
   border: 1.5px solid var(--raku-orange);
 }
 .btn-secondary:hover { background: rgba(236, 129, 61, 0.08); }
@@ -143,7 +192,7 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   gap: 6px;
   font-weight: 600;
-  color: var(--raku-orange);
+  color: var(--raku-orange-text);
   border-bottom: 2px solid transparent;
   transition: border-color var(--transition-fast);
 }
@@ -177,7 +226,7 @@ p:last-child { margin-bottom: 0; }
   color: var(--raku-muted);
   transition: color var(--transition-fast);
 }
-.nav a:hover { color: var(--raku-orange); }
+.nav a:hover { color: var(--raku-orange-text); }
 .nav .nav-cta {
   background: var(--raku-orange);
   color: var(--raku-ink);
@@ -225,7 +274,6 @@ p:last-child { margin-bottom: 0; }
   max-width: none;
   object-fit: cover;
   object-position: center;
-  filter: saturate(0.96) contrast(1.03) brightness(1.02);
 }
 .hero-overlay {
   position: absolute;
@@ -263,12 +311,18 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
 }
 .about-media { position: relative; }
-.about-img {
-  border-radius: var(--radius-lg);
-  aspect-ratio: 4 / 4.4;
-  object-fit: cover;
+.about-media > picture {
+  display: block;
   width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
+}
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: saturate(0.96) contrast(1.03) brightness(1.02);
 }
 .about-badge {
@@ -289,7 +343,7 @@ p:last-child { margin-bottom: 0; }
   height: 40px;
   border-radius: 50%;
   background: var(--raku-teal-soft);
-  color: var(--raku-teal);
+  color: var(--raku-teal-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -321,7 +375,7 @@ p:last-child { margin-bottom: 0; }
   height: 34px;
   border-radius: 50%;
   background: var(--raku-teal-soft);
-  color: var(--raku-teal);
+  color: var(--raku-teal-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -393,7 +447,7 @@ p:last-child { margin-bottom: 0; }
   gap: 10px;
 }
 .accom-body h3 { font-size: 1.25rem; margin: 0; }
-.accom-capacity { font-size: 0.82rem; color: var(--raku-teal); font-weight: 600; margin: 0; }
+.accom-capacity { font-size: 0.82rem; color: var(--raku-teal-text); font-weight: 600; margin: 0; }
 .accom-desc { color: var(--raku-muted); font-size: 0.9rem; line-height: 1.6; margin: 0; flex: 1; }
 .accom-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0; }
 .chip {
@@ -409,7 +463,7 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   justify-content: space-between;
   margin-top: 4px;
-  color: var(--raku-orange);
+  color: var(--raku-orange-text);
   font-size: 0.86rem;
   font-weight: 700;
 }
@@ -462,7 +516,7 @@ p:last-child { margin-bottom: 0; }
 .accom-details-copy { padding-top: 4px; }
 .accom-details-copy h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 4px; }
 .accom-details-capacity {
-  color: var(--raku-teal);
+  color: var(--raku-teal-text);
   font-size: 0.9rem;
   font-weight: 700;
   margin-bottom: 18px;
@@ -491,7 +545,7 @@ p:last-child { margin-bottom: 0; }
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--raku-teal);
+  color: var(--raku-teal-text);
   font-weight: 700;
 }
 
@@ -700,9 +754,15 @@ p:last-child { margin-bottom: 0; }
   transform: translateY(-3px);
   box-shadow: var(--shadow-soft);
 }
-.facility-highlight img {
+.facility-highlight > picture {
+  display: block;
   width: 100%;
   aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+.facility-highlight img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .facility-highlight-body {
@@ -742,7 +802,7 @@ p:last-child { margin-bottom: 0; }
   height: 52px;
   border-radius: 50%;
   background: var(--raku-teal-soft);
-  color: var(--raku-teal);
+  color: var(--raku-teal-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -826,7 +886,7 @@ p:last-child { margin-bottom: 0; }
 .exp-card-body h3 { font-size: 1.25rem; margin: 0; }
 .exp-provider,
 .exp-details-provider {
-  color: var(--raku-teal);
+  color: var(--raku-teal-text);
   font-size: 0.82rem;
   font-weight: 700;
   margin: 0;
@@ -837,7 +897,7 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   justify-content: space-between;
   margin-top: 4px;
-  color: var(--raku-orange);
+  color: var(--raku-orange-text);
   font-size: 0.86rem;
   font-weight: 700;
 }
@@ -971,7 +1031,7 @@ p:last-child { margin-bottom: 0; }
   height: 52px;
   border-radius: 50%;
   background: var(--raku-teal-soft);
-  color: var(--raku-teal);
+  color: var(--raku-teal-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -996,7 +1056,7 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--raku-orange);
+  color: var(--raku-orange-text);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -1055,14 +1115,14 @@ p:last-child { margin-bottom: 0; }
   padding: 5px 9px;
   border-radius: 999px;
   background: var(--raku-teal-soft);
-  color: var(--raku-teal);
+  color: var(--raku-teal-text);
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 .test-rating {
-  color: var(--raku-orange);
+  color: var(--raku-orange-text);
   font-size: 0.86rem;
   letter-spacing: 0.08em;
 }
@@ -1070,8 +1130,8 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--font-display);
   font-size: 4rem;
   line-height: 0.65;
-  color: var(--raku-orange);
-  opacity: 0.38;
+  color: var(--raku-orange-text);
+  opacity: 0.7;
   display: block;
   margin-bottom: 12px;
 }
@@ -1213,9 +1273,9 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.88rem;
   transition: color var(--transition-fast);
 }
-.foot-col a svg { width: 15px; height: 15px; color: var(--raku-teal); flex: none; }
+.foot-col a svg { width: 15px; height: 15px; color: var(--raku-teal-text); flex: none; }
 .foot-col a:hover { color: #fff; }
-.foot-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 18px 0; font-size: 0.8rem; color: #6d6560; text-align: center; }
+.foot-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 18px 0; font-size: 0.8rem; color: #9e9690; text-align: center; }
 
 /* === WHATSAPP FLOAT === */
 .wa-float {
@@ -1250,7 +1310,7 @@ p:last-child { margin-bottom: 0; }
 .carousel-hint {
   display: none;
   font-size: 0.78rem;
-  color: var(--raku-stone);
+  color: var(--raku-muted);
   text-align: center;
   margin-top: 14px;
   padding: 0 16px;

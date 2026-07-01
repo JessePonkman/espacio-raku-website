@@ -1,4 +1,5 @@
 import { LeafIcon, MoonIcon, UsersIcon } from './icons/Icons.jsx';
+import OptimizedImage, { PHOTO_WIDTHS } from './OptimizedImage.jsx';
 
 const highlights = [
   {
@@ -20,10 +21,13 @@ export default function AboutSection() {
     <section className="section about" id="sobre">
       <div className="container about-grid">
         <div className="about-media">
-          <img
+          <OptimizedImage
             src="/assets/photos/jardin-pileta.jpg"
             alt="Jardín y piscina de Espacio Raku en Chacras de Coria"
             className="about-img"
+            widths={PHOTO_WIDTHS}
+            sizes="(max-width: 760px) calc(100vw - 32px), 50vw"
+            loading="lazy"
           />
           <div className="about-badge" aria-hidden="true">
             <div className="badge-ico">

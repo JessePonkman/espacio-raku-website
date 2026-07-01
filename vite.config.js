@@ -19,7 +19,9 @@ function normalizeSiteUrl(rawUrl) {
 
 function seoAssets(siteUrl) {
   const homeUrl = siteUrl ? `${siteUrl}/` : null;
-  const socialImageUrl = siteUrl ? `${siteUrl}/assets/photos/hero-piscina.jpg` : null;
+  const socialImageUrl = siteUrl
+    ? `${siteUrl}/assets/optimized/v1/assets/photos/hero-piscina-1280.jpg`
+    : null;
 
   return {
     name: 'espacio-raku-seo-assets',

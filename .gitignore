@@ -1,5 +1,6 @@
 node_modules
 dist
+public/assets/optimized/
 .DS_Store
 *.log
 *.mp4

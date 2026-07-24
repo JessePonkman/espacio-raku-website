@@ -13,7 +13,7 @@ set -Eeuo pipefail
 #   CLOUD_RUN_REGION     Cloud Run region. Default: us-central1
 #   DOCKER_PLATFORM      Target image platform(s). Default: linux/amd64
 #   ALLOW_UNAUTHENTICATED Whether to expose the service publicly. Default: true
-#   SITE_URL             Final public origin used for canonical, social, and sitemap URLs
+#   SITE_URL             Final public origin used for canonical, social, and sitemap URLs. Default: https://espacio-raku.com
 #
 # Example:
 #   GCP_PROJECT=my-gcp-project \
@@ -108,6 +108,7 @@ main() {
   local cloud_run_region="${CLOUD_RUN_REGION:-us-central1}"
   local docker_platform="${DOCKER_PLATFORM:-linux/amd64}"
   local allow_unauthenticated="${ALLOW_UNAUTHENTICATED:-true}"
+  local site_url="${SITE_URL:-https://espacio-raku.com}"
 
   local tag="${TAG:-}"
   if [[ -z "$tag" ]]; then
@@ -132,6 +133,7 @@ main() {
   echo "==> GCP project: ${GCP_PROJECT}"
   echo "==> Cloud Run region: ${cloud_run_region}"
   echo "==> Docker platform: ${docker_platform}"
+  echo "==> Canonical SITE_URL: ${site_url}"
 
   ensure_artifact_registry_api
   ensure_artifact_registry_repository "$repository_name" "$cloud_run_region"
@@ -142,7 +144,7 @@ main() {
   echo "==> Building and pushing Docker image"
   docker buildx build \
     --platform "$docker_platform" \
-    --build-arg "SITE_URL=${SITE_URL:-}" \
+    --build-arg "SITE_URL=${site_url}" \
     --tag "$image" \
     --tag "$latest_image" \
     --push \

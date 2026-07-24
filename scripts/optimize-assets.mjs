@@ -5,6 +5,7 @@ import sharp from 'sharp';
 const publicDir = 'public';
 const sourceRoot = join(publicDir, 'assets');
 const outputRoot = join(sourceRoot, 'optimized', 'v1');
+const ogOutputPath = join(sourceRoot, 'og', 'espacio-raku-chacras-de-coria.jpg');
 
 const PHOTO_WIDTHS = [320, 480, 640, 768, 960, 1280, 1600];
 const LOGO_WIDTHS = [128, 192, 256, 384, 512];
@@ -30,6 +31,50 @@ function extensionOf(path) {
 
 function withoutExtension(path) {
   return path.replace(/\.[^.]+$/, '');
+}
+
+
+async function generateOgImage() {
+  const width = 1200;
+  const height = 630;
+  const heroPath = join(sourceRoot, 'photos', 'hero-piscina.jpg');
+  const logoPath = join(sourceRoot, 'brand', 'logo-blanco.png');
+  const overlaySvg = `
+    <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="shade" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stop-color="#2B2A28" stop-opacity="0.74"/>
+          <stop offset="0.58" stop-color="#2B2A28" stop-opacity="0.34"/>
+          <stop offset="1" stop-color="#2B2A28" stop-opacity="0.1"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="630" fill="url(#shade)"/>
+      <text x="72" y="330" font-family="Georgia, serif" font-size="76" fill="#FFF8F2" letter-spacing="-1">
+        Alojamiento en
+      </text>
+      <text x="72" y="415" font-family="Georgia, serif" font-size="76" fill="#FFF8F2" letter-spacing="-1">
+        Chacras de Coria
+      </text>
+      <text x="76" y="480" font-family="Arial, sans-serif" font-size="28" font-weight="600" fill="#F5EFE4">
+        Lofts y departamento con piscina · Mendoza
+      </text>
+    </svg>`;
+
+  await mkdir(join(sourceRoot, 'og'), { recursive: true });
+
+  const logoBuffer = await sharp(logoPath)
+    .resize({ width: 270, withoutEnlargement: true })
+    .png()
+    .toBuffer();
+
+  await sharp(heroPath)
+    .resize(width, height, { fit: 'cover', position: 'center' })
+    .composite([
+      { input: Buffer.from(overlaySvg), top: 0, left: 0 },
+      { input: logoBuffer, top: 72, left: 72 },
+    ])
+    .jpeg({ quality: 86, mozjpeg: true, progressive: true })
+    .toFile(ogOutputPath);
 }
 
 async function collectImages(directory) {
@@ -129,6 +174,8 @@ async function copyFontAssets() {
     await copyFile(sourcePath, outputPath);
   }
 }
+
+await generateOgImage();
 
 const images = await collectImages(sourceRoot);
 await mkdir(outputRoot, { recursive: true });

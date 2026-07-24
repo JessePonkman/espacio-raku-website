@@ -1,0 +1,204 @@
+[04/05/2026, 1:36:46 PM] Pág Web. Espacio Raku: ‎Messages and calls are end-to-end encrypted. Only people in this chat can read, listen to, or share them.
+[04/05/2026, 1:36:46 PM] Joaco Calvo: ‎Joaco Calvo created group “Pág Web. Espacio Raku”
+[04/05/2026, 1:36:47 PM] Pág Web. Espacio Raku: ‎Joaco Calvo added you
+[05/05/2026, 10:24:18 AM] Judit Fraidenray: Buen día Francisco y Mariano! Soy Judit, la mamá de Joaquín.
+Vi el demo que hicieron y me gustaría avanzar con el tema.
+Necesito saber cuánto cobran por la página web, cómo es el mantenimiento, el tema de dominio, certificado, etc (cosas que no entiendo).
+Tal vez podamos hacer alguna reunión virtual para conversar algunas de éstas cosas.
+[05/05/2026, 10:48:28 AM] Mariano Saez: Hola Judit! Buenos dias! Nos alegra que te haya gustado la demo. Justamente, ahora el siguiente paso seria que nos juntemos por videollamada para que te comentemos los tipos de trabajos que hacemos y ustedes nos puedan comentar mas en detalle que buscan para el sitio web de Espacio Raku (si buscan unicamente una pagina informativa o por otro lado algun tipo de sistema mas complejo) y con eso poder dar una cotizacion, una estimacion de tiempo, asi como tambien el costo de mantenimiento del sitio web.
+[05/05/2026, 10:50:14 AM] Mariano Saez: En que horarios tendrías tiempo para la reunion? Aprox. duraria unos 40 mins.
+[05/05/2026, 11:19:07 AM] Judit Fraidenray: En general a partir de las 19 hs puedo lunes, martes y miércoles
+[05/05/2026, 11:49:21 AM] Mariano Saez: Dale buenisimo! Mañana a las 19 entonces podriamos hacer la videollamada
+[05/05/2026, 11:49:40 AM] Mariano Saez: Te pasamos link por aca mañana mas cerca del horario
+[05/05/2026, 12:21:10 PM] Judit Fraidenray: Perfecto mañana
+[06/05/2026, 6:56:34 PM] Mariano Saez: buenas tardes Judit! Te voy dejando el link por aca!
+[06/05/2026, 6:56:39 PM] Mariano Saez: Website Espacio Raku
+Miércoles, 6 mayo · 7:00 – 8:00pm
+Zona horaria: America/Argentina/Mendoza
+Información para unirse a la reunión de Google Meet
+Vínculo a la videollamada: https://meet.google.com/ftq-jsbr-fpf
+[06/05/2026, 7:03:16 PM] Judit Fraidenray: ahí voy
+[06/05/2026, 7:20:55 PM] Mariano Saez: mariano.saez29@gmail.com
+[06/05/2026, 7:54:22 PM] Fran (Mi Terroncito De Azucar): franloga02@gmail.com
+[07/05/2026, 11:50:25 AM] Judit Fraidenray: Buen día!!
+Les compartí en Drive , avisen si pueden acceder
+[07/05/2026, 12:02:54 PM] Mariano Saez: Buenos dias! Ahi me llego el acceso!
+[11/05/2026, 4:31:05 PM] Mariano Saez: Hola Judit, ¿cómo estás?
+
+Te paso ordenado lo que estuvimos viendo después de la reunión:
+
+**Alcance**
+
+La idea es avanzar con una primera versión de la página de Espacio Raku, enfocada en mostrar el lugar de forma clara y profesional.
+
+Incluiría las secciones que charlamos: alojamientos, servicios, experiencias, ubicación, preguntas frecuentes, testimonios y contacto directo por WhatsApp.
+
+También vamos a contemplar la parte del calendario de disponibilidad, buscando una alternativa que no lleve a la gente directamente a Booking, para favorecer más las consultas y reservas directas.
+
+**Plazo de tiempo**
+
+Estimamos un plazo total de aproximadamente **2 meses** para tener la página lista y publicada.
+
+**Cronograma de entregas**
+
+* **Semanas 1 y 2:** organización del material, fotos, textos, logo/manual de marca y estructura general.
+* **Semanas 3 y 4:** armado de la primera versión visual de la página.
+* **Semanas 5 y 6:** ajustes de textos, imágenes, secciones y detalles generales.
+* **Semanas 7 y 8:** revisión final, configuración y publicación de la página.
+
+La idea es ir mostrándote avances durante el proceso, así podemos ajustar tranquilos sin dejar todo para el final.
+
+**Monto**
+
+El valor por esta primera etapa sería de **USD 100**.
+
+Lo manejaríamos con un esquema 50/50:
+
+* **USD 50** para iniciar el trabajo.
+* **USD 50** al finalizar y entregar la página terminada.
+
+Los costos externos, como dominio y hosting, quedarían aparte, tal como charlamos. Eso lo podemos configurar de la forma más simple posible para vos.
+[11/05/2026, 5:56:44 PM] Judit Fraidenray: Oki, perfecto!
+[11/05/2026, 5:57:35 PM] Judit Fraidenray: El pago lo quieren en dólares o en pesos?
+[11/05/2026, 6:24:49 PM] Mariano Saez: Puede ser en pesos al cambio para la venta del dolar blue, no habria problema!
+[11/05/2026, 10:19:07 PM] Judit Fraidenray: Oki, pásame alias y mañana te paso
+[12/05/2026, 12:06:17 AM] Mariano Saez: Bien el alias seria:
+[12/05/2026, 12:06:25 AM] Mariano Saez: mm.saez.santander
+‎[12/05/2026, 9:59:59 AM] Judit Fraidenray: ‎image omitted
+‎[12/05/2026, 10:00:58 AM] Judit Fraidenray: ‎image omitted
+[27/05/2026, 9:46:08 AM] Mariano Saez: Buenos dias Judit, como estas? Como habiamos acordado esta semana era la primer entrega de la pagina con las lineas generales de como iba a ser en cuanto a diseño, colores y secciones. A continuacion te vamos a pasar un enlace de prueba para que puedas ir viendo como va quedando la pagina y a su vez nos puedas ir dando feedback acerca de cosas que creas que se pueden mejorar o modificar. Quedamos atentos a tus comentarios! ‎<This message was edited>
+[27/05/2026, 9:46:14 AM] Mariano Saez: https://espacio-raku-website-916362401114.us-central1.run.app/
+[27/05/2026, 6:41:57 PM] Judit Fraidenray: Hola Mariano, hola Francisco!
+Me gusta lo que van haciendo. Genial que han respetado los colores del logo y la tipografía 👍🏻😁
+También me gusta la distribución y los distintos items
+[27/05/2026, 6:42:53 PM] Judit Fraidenray: Hay algunas cosas que modificar de texto o foto/texto pero en general va muy bien 😊
+[27/05/2026, 6:43:35 PM] Judit Fraidenray: Para esas modificaciones tal vez una video llamada de un ratito y lo charlamos
+[27/05/2026, 6:44:29 PM] Mariano Saez: Hola Judit! Nos alegra que vayamos por buen camino jaja ‎<This message was edited>
+[27/05/2026, 6:47:15 PM] Mariano Saez: Totalmente eso te ibamos a proponer, tambien esta la opcion de una captura de pantalla y lo que quieras modificar en un audio
+[27/05/2026, 6:47:23 PM] Mariano Saez: Para la videollamada, que disponibilidad manejas?
+[27/05/2026, 6:51:51 PM] Judit Fraidenray: Hoy puedo 
+El viernes a la siesta
+[27/05/2026, 6:54:32 PM] Mariano Saez: Dale, excelente! Te parece hoy a las 20?
+[27/05/2026, 6:54:50 PM] Judit Fraidenray: Dale
+[27/05/2026, 8:00:51 PM] Mariano Saez: https://meet.google.com/dqi-izbj-cwn
+[05/06/2026, 9:11:32 AM] Judit Fraidenray: Conectá con la montaña y su Magia 🏔️✨
+
+¡Hola! Soy Gaby, Guía de Turismo en Mendoza. 
+Me apasiona caminar la montaña y habitar la naturaleza, y por eso quiero invitarte a vivir una experiencia diferente de Senderismo.
+
+La propuesta no es solo caminar, sino regalarnos un espacio para:
+•Sintonizar con nuestro propio ritmo.
+•Disfrutar conscientemente del paisaje y la energía del entorno.
+•Cerrar la experiencia con una meditación sonora que te va a dejar en total armonía.
+
+🚙 Todo resuelto: Para tu total comodidad, la actividad incluye los traslados ida y vuelta desde tu alojamiento hasta la base del sendero.
+
+🎨🧘‍♀️ A tu medida: Cada circuito es flexible y se adapta a la experiencia que elijas vivenciar. Podemos diseñar salidas de Senderismo combinadas con Meditación Sonora, Yoga, Arte, ¡y mucho más!
+
+¿Te sumás a caminar el presente? Escribime y coordinamos tu próxima aventura.
+‎[05/06/2026, 9:11:32 AM] Judit Fraidenray: ‎<attached: 00003040-PHOTO-2026-06-05-09-11-33.jpg>
+‎[05/06/2026, 9:13:13 AM] Judit Fraidenray: Degustación para turistas.docx ‎<attached: 00003041-Degustación para turistas.docx>
+‎[05/06/2026, 9:13:13 AM] Judit Fraidenray: ‎<attached: 00003042-PHOTO-2026-06-05-09-13-14.jpg>
+‎[05/06/2026, 9:13:13 AM] Judit Fraidenray: ‎<attached: 00003043-PHOTO-2026-06-05-09-13-14.jpg>
+‎[05/06/2026, 9:13:14 AM] Judit Fraidenray: ‎<attached: 00003044-PHOTO-2026-06-05-09-13-15.jpg>
+‎[05/06/2026, 9:13:14 AM] Judit Fraidenray: ‎<attached: 00003045-PHOTO-2026-06-05-09-13-15.jpg>
+‎[05/06/2026, 9:13:14 AM] Judit Fraidenray: ‎<attached: 00003046-PHOTO-2026-06-05-09-13-15.jpg>
+‎[05/06/2026, 9:19:18 AM] Judit Fraidenray: ‎<attached: 00003047-AUDIO-2026-06-05-09-19-19.opus>
+[05/06/2026, 9:28:00 AM] Mariano Saez: Hola Judit, buenos dias! Dale excelente ahi lo vamos a estar sumando a la pagina
+[05/06/2026, 9:28:35 AM] Mariano Saez: Y en cuanto a lo de los testimonios no hay problema nos metemos al instagram y los copiamos!
+[30/06/2026, 7:36:07 PM] Mariano Saez: Hola Judit! Buenas tardes, como estas? Te compartimos el nuevo enlace para la web de Espacio Raku: https://espacio-raku.com/
+[30/06/2026, 7:37:57 PM] Mariano Saez: Paso a compartirte que hemos hecho en esta nueva iteracion, que quedaria pendiente de ambos lados (que es muy poquito)
+[30/06/2026, 7:44:07 PM] Mariano Saez: Que hicimos:
+- Corregimos los puntos que habíamos dejado anotados después de la última revisión: textos, fotos, capacidades de los alojamientos, servicios, disponibilidad, ubicación, testimonios, preguntas frecuentes, redes sociales y botones de WhatsApp.
+• Dejamos más clara la información de los alojamientos: los dos lofts, el departamento, sus comodidades y la posibilidad de consultar para grupos.
+• Sumamos y ordenamos mejor las experiencias, como la degustación de vinos y la propuesta de montaña.
+• Mejoramos mucho la carga de la página, especialmente para celular, optimizando fotos, logos y detalles visuales para que se vea mejor y más rápido.
+• Mejoramos la parte para que Google entienda mejor la página y pueda mostrar mejor Espacio Raku cuando alguien busque alojamiento, cabañas o estadías en Chacras de Coria / Mendoza, hay algunas cuestiones que escapan lo tecnico y entran mas en lo que es marketing que podemos charlar en nuestra proxima reunion si queres ‎<This message was edited>
+[30/06/2026, 7:47:19 PM] Mariano Saez: Que falta:
+- Reemplazo de calendario de muestra por calendario final de Espacio Raku (es necesaria una reunion entre ambos lados para esto dado que requiere algunos pasos en tu cuenta de Google para compartir un calendario)
+- ⁠Experiencias restantes, tanto descripciones como fotos finales que van a quedar en la pagina. De momento dejamos fijas las que nos diste, las demas estan ocultas.
+- ⁠Feedback general de la estetica y experiencia de la pagina para poder corregirlas para la proxima iteracion
+[30/06/2026, 7:47:41 PM] Mariano Saez: Quedamos atentos a cualquier duda o consulta!
+‎[01/07/2026, 10:46:58 AM] Judit Fraidenray: ‎<attached: 00003055-AUDIO-2026-07-01-10-46-59.opus>
+[01/07/2026, 4:15:12 PM] Mariano Saez: Dale buenisimo Judit, vamos coordinando para la semana que viene entonces. Nos alegramos mucho que te haya gustado!
+‎[03/07/2026, 12:43:19 PM] Judit Fraidenray: ‎<attached: 00003057-PHOTO-2026-07-03-12-43-20.jpg>
+[03/07/2026, 12:43:20 PM] Judit Fraidenray: Regresión a vidas pasadas
+
+Con la Lic. Valeria Fraidenray – Psicóloga
+
+Desde hace años acompaño procesos de transformación personal integrando distintas herramientas terapéuticas. Entre ellas, la terapia de regresión, una experiencia profunda de autoconocimiento orientada a comprender emociones, conflictos y patrones que muchas veces no encuentran una explicación consciente.. Te invito a vivir una experiencia de profunda exploración interior a través de una sesión de regresión, un espacio terapéutico que permite acceder a recuerdos, imágenes y emociones que emergen del inconsciente.
+
+Algunas personas experimentan estos contenidos como memorias de vidas pasadas; otras los viven como un lenguaje simbólico que aporta nuevas comprensiones sobre conflictos, vínculos o emociones del presente.
+
+Una experiencia transformadora
+
+Cada sesión se desarrolla en un entorno de calma y acompañamiento profesional, respetando tus tiempos y tu proceso. El objetivo es favorecer el autoconocimiento, ampliar la comprensión de tu historia y abrir nuevas posibilidades de transformación personal.
+
+¿Te animás a descubrir lo que tu inconsciente tiene para mostrarte?
+[03/07/2026, 12:44:07 PM] Judit Fraidenray: HOLA CHICOS, AHÍ VA OTRA EXPERIENCIA PARA AGREGAR.
+[03/07/2026, 12:46:24 PM] Judit Fraidenray: Yoga, Movimiento Consciente y Educación Somática
+
+Descubrí una forma diferente de vivir tus vacaciomes: regalate un momento para detener el ritmo, respirar profundamente y conectar con vos mismo en un entorno de calma y naturaleza.
+
+Esta experiencia integra yoga, movimiento consciente y educación somática, combinando respiración, movilidad, ejercicios de coordinación, estiramientos y técnicas de conciencia corporal que ayudan a liberar tensiones, recuperar la vitalidad y favorecer un estado de bienestar físico, mental y emocional.
+
+Cada encuentro está diseñado para adaptarse a las necesidades de cada persona, por lo que no es necesario tener experiencia previa. Ya sea para comenzar el día con energía o para relajarte después de recorrer bodegas, montañas y paisajes mendocinos, esta práctica te permitirá habitar tu cuerpo con mayor libertad, presencia y equilibrio.
+Más que una clase de yoga, es una invitación a reconectar con vos mismo, disfrutar el momento presente y llevarte de Mendoza una experiencia de bienestar que permanecerá aún después de que termine el viaje.
+
+Comunicate con Erica Cesca al 2612445667 y coordina tu encuentro
+[03/07/2026, 12:46:24 PM] Judit Fraidenray: Acroyoga
+
+Transformá tu estadía en Mendoza en una experiencia inolvidable a través del Acroyoga, una experiencia diferente durante tus vacaciones. Esta práctica combina movimiento, yoga, juegos, confianza y conexión a través del trabajo en equipo.
+
+Si venís en pareja, con amigas/os o en familia, es una propuesta ideal para compartir un momento de diversión, crear recuerdos inolvidables y fortalecer los vínculos desde una experiencia única. 
+
+A través de posturas simples, equilibrios, movimientos fluidos y ejercicios de confianza, el Acroyoga desarrolla fuerza, coordinación, flexibilidad y comunicación, siempre en un ambiente relajado, cuidadoso, respetuoso y lleno de alegría. No es necesario tener experiencia previa, solo ganas de explorar, jugar y disfrutar.
+
+¿Quienes pueden sumarse a esta práctica? Todos: Infancias, madres, padres, tías y tíos, abuelas y abuelos, amigas y amigos...... 
+
+Esta es una invitación a conectar con el presente, compartir desde el cuidado mutuo y llevarte de Mendoza una experiencia diferente, divertida y enriquecedora.
+
+Comunicate con Erica Cesca al 261 244-5667 y coordiná tu encuentro.
+[03/07/2026, 12:46:24 PM] Judit Fraidenray: Masaje Tailandés Tradicional
+
+Regalate un momento de profundo bienestar durante tu estadía en Mendoza a través del auténtico masaje tailandés tradicional, una práctica ancestral reconocida por su capacidad de restaurar el equilibrio natural del cuerpo y la mente.
+La sesión se realiza sobre un cómodo futón en el piso y con ropa confortable, permitiendo que el cuerpo se relaje por completo. Mediante una combinación de presiones rítmicas, estiramientos asistidos, movilizaciones suaves y un trabajo consciente sobre las líneas energéticas, este masaje además de invitarte a relajar  y descontractur tu cuerpo, te ayuda a aliviar tensiones musculares, mejorar la flexibilidad, fortalece el sistema inmunológico, estimula la circulación y favorecer una respiración más libre y profunda.
+
+Después de días de recorrer bodegas, caminar entre viñedos, explorar la montaña o simplemente disfrutar de la ciudad, esta experiencia ofrece una pausa reparadora para recuperar energía, soltar el cansancio y volver al equilibrio.
+Más que un masaje, es un viaje hacia el bienestar, una invitación a habitar el presente, conectar con vos mismo y llevarte de Mendoza un recuerdo que permanecerá mucho después de haber regresado a casa.
+
+Comunícate con Erica Cesca al 2612445667 y coordina tu encuentro
+[03/07/2026, 12:46:25 PM] Judit Fraidenray: Encuentros de Astrología Humanística
+ 
+ ¿Te animas a descubrir nuevas versiones tuyas en vacaciones?
+
+Regalate un espacio de pausa, reflexión y autoconocimiento durante tu estadía en Mendoza. La carta natal es un mapa simbólico que, a partir de la posición de los astros en el momento de tu nacimiento, ofrece una valiosa herramienta para comprender tu forma de ser, tus potencialidades, los desafíos que atraviesan tu camino y la manera en que te vinculás con las personas de tu entorno: pareja, hijos/as, jefes, hermanas/os, amigas/os, etc).
+
+Desde el enfoque de la astrología evolutiva, esta experiencia no busca predecir el futuro, sino brindar una mirada profunda y consciente sobre los procesos que estás viviendo. A través de una lectura personalizada, podrás reconocer tus recursos internos, comprender con mayor claridad ciertos patrones que se repiten en tu vida y encontrar nuevas perspectivas para transitar tus experiencias con más conciencia y comprensión.
+Es un encuentro de escucha y diálogo que te invita a detenerte, observarte sin juicio y fortalecer el vínculo con uno mismo y con los demás. En estas sesiones se abre un espacio de reflexión, donde muchas personas logran comprender mejor sus relaciones, sus decisiones y el momento vital que están atravesando hoy.
+En el marco de tu viaje, esta propuesta suma una dimensión diferente al descanso y al disfrute, es la posibilidad de dedicarte un tiempo de calidad para conocerte más profundamente y llevarte de Mendoza una experiencia que también deje una huella en tu mundo interior.
+
+Podes optar por: 
+- Carta Natal, Revolución Solar o Sinastrias
+
+Los encuentros son acompañadas por Erica Cesca, con una mirada Astologina Humanística y Evolutiva. 
+
+Comunícate con Erica Cesca al 2612445667, y coordina tu encuentro
+[03/07/2026, 12:46:25 PM] Judit Fraidenray: Momentos de bienestar con Erica Cesca: Profe de Yoga y Movimiento, Masajista y Astróloga 
+
+Te invito a compartir un espacio de calma, movimiento y presencia. Más allá de la experiencia que elijas vivir conmigo, cada encuentro será una oportunidad para reconectar con vos, descubrir nuevas posibilidades y llevarte herramientas para disfrutar con mayor plenitud el momento presente.
+‎[03/07/2026, 12:46:25 PM] Judit Fraidenray: ‎<attached: 00003065-PHOTO-2026-07-03-12-46-26.jpg>
+‎[03/07/2026, 12:46:25 PM] Judit Fraidenray: ‎<attached: 00003066-PHOTO-2026-07-03-12-46-26.jpg>
+‎[03/07/2026, 12:47:20 PM] Judit Fraidenray: ‎<attached: 00003067-AUDIO-2026-07-03-12-47-21.opus>
+‎[03/07/2026, 1:10:42 PM] Mariano Saez: ‎<attached: 00003068-AUDIO-2026-07-03-13-10-43.opus>
+[16/07/2026, 9:54:08 AM] Mariano Saez: Hola Judit! Buenos dias! Primero que nada una disculpa por no agendar la reunion la semana pasada, Fran y yo tuvimos un viaje a Buenos Aires por un evento que nos consumio el tiempo completamente. Te queriamos preguntar por tu disponibilidad para agendar la llamada en la que vamos a tocar los siguientes puntos:
+- Experiencias restantes (si es que las hay)
+- Configuracion del calendario
+- Revision de los ajustes propuestos
+- Feedback general de la pagina
+[16/07/2026, 10:10:39 AM] Judit Fraidenray: Buen día Mariano, hoy les iba a escribir por lo mismo. Ya quiero terminar el proceso.
+La semana próxima puedo en las mañanas alrededor de las 11 hs el martes y el miércoles. Podría ser?
+[16/07/2026, 10:13:02 AM] Mariano Saez: Excelente, buscamos lo mismo de nuestro lado tambien. Mira esa hora se me complica a mi un poco, podras el martes a las 12?
+[16/07/2026, 10:14:39 AM] Judit Fraidenray: Sí, el martes a las 12 está bien
+[16/07/2026, 10:14:54 AM] Mariano Saez: Perfecto
+[16/07/2026, 10:15:16 AM] Mariano Saez: Nos vemos ese dia entonces!

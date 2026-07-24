@@ -1,6 +1,6 @@
 export const groupStay = {
   eyebrow: 'ESTADÍAS EN GRUPO',
-  title: 'Juntos, con espacio para cada uno',
+  title: 'Alojamiento para parejas y grupos de hasta 8–9 personas',
   description:
     'Ya sea en pareja o con amigos, pueden compartir Espacio Raku coordinando varios alojamientos dentro del complejo. Recibimos grupos de hasta 9 personas, manteniendo la comodidad e independencia de cada espacio.',
   capacityNote:

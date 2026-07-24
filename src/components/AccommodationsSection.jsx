@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { accommodations } from '../data/accommodations.js';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
+import { trackWhatsAppClick } from '../utils/analytics.js';
 import ImageCarousel from './ImageCarousel.jsx';
 import OptimizedImage, { PHOTO_WIDTHS } from './OptimizedImage.jsx';
 
@@ -20,7 +21,7 @@ export default function AccommodationsSection() {
       <div className="container accommodations-head">
         <span className="eyebrow">CABAÑAS Y ALOJAMIENTOS</span>
         <h2>
-          Lofts y <span className="accent">departamento</span>
+          Lofts y departamento para <span className="accent">alojarte en Mendoza</span>
         </h2>
         <p className="lead">
           Tres opciones de hospedaje y alquiler temporario para sentirte como en casa, con
@@ -44,7 +45,7 @@ export default function AccommodationsSection() {
                   <div className="accom-img">
                     <OptimizedImage
                       src={accommodation.image}
-                      alt={accommodation.name}
+                      alt={accommodation.imageAlt ?? accommodation.name}
                       widths={PHOTO_WIDTHS}
                       sizes="(max-width: 760px) 82vw, (max-width: 980px) 50vw, 33vw"
                       loading="lazy"
@@ -126,6 +127,7 @@ export default function AccommodationsSection() {
                 rel="noopener noreferrer"
                 className="btn btn-primary wide"
                 aria-label={`Consultar disponibilidad para ${selectedAccommodation.name}`}
+                onClick={() => trackWhatsAppClick(`whatsapp_click_${selectedAccommodation.id.replaceAll('-', '_')}`)}
               >
                 Consultar por este alojamiento
               </a>

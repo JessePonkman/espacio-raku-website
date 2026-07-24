@@ -1,14 +1,15 @@
 import { InstagramIcon, FacebookIcon, WhatsAppIcon, PinIcon } from './icons/Icons.jsx';
 import { site } from '../data/site.js';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
+import { trackWhatsAppClick } from '../utils/analytics.js';
 import OptimizedImage, { LOGO_WIDTHS } from './OptimizedImage.jsx';
 
 const navLinks = [
-  { href: '#alojamientos', label: 'Alojamientos' },
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#experiencias', label: 'Experiencias' },
-  { href: '#ubicacion', label: 'Ubicación' },
-  { href: '#faq', label: 'Preguntas frecuentes' },
+  { href: '/#alojamientos', label: 'Alojamientos' },
+  { href: '/#servicios', label: 'Servicios' },
+  { href: '/#experiencias', label: 'Experiencias' },
+  { href: '/#ubicacion', label: 'Ubicación' },
+  { href: '/#faq', label: 'Preguntas frecuentes' },
 ];
 
 export default function Footer() {
@@ -16,7 +17,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="foot-brand">
-          <a href="#top" aria-label="Espacio Raku, volver al inicio">
+          <a href="/" aria-label="Espacio Raku, volver al inicio">
             <OptimizedImage
               src="/assets/brand/logo-blanco.png"
               alt="Espacio Raku"
@@ -52,6 +53,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Escribinos por WhatsApp (se abre en una nueva pestaña)"
+              onClick={() => trackWhatsAppClick('whatsapp_click_footer_social')}
             >
               <WhatsAppIcon width="18" height="18" />
             </a>
@@ -74,10 +76,11 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Consultar disponibilidad por WhatsApp (se abre en una nueva pestaña)"
+            onClick={() => trackWhatsAppClick('whatsapp_click_footer_contact')}
           >
             <WhatsAppIcon /> Consultar disponibilidad
           </a>
-          <a href="#ubicacion">
+          <a href="/#ubicacion">
             <PinIcon /> Chacras de Coria, Mendoza
           </a>
         </div>

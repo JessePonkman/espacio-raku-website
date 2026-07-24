@@ -27,7 +27,7 @@ export default function AmenitiesSection() {
       <div className="container amenities-head">
         <span className="eyebrow">COMODIDADES</span>
         <h2>
-          Servicios e <span className="accent">instalaciones</span>
+          Servicios del <span className="accent">alojamiento</span>
         </h2>
         <p className="lead">
           Comodidades para una estadía tranquila y espacios para disfrutar el aire libre.

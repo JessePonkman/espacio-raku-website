@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
+import { trackWhatsAppClick } from '../utils/analytics.js';
 import OptimizedImage, { LOGO_WIDTHS } from './OptimizedImage.jsx';
 
 const links = [
-  { href: '#alojamientos', label: 'Alojamientos' },
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#experiencias', label: 'Experiencias' },
-  { href: '#ubicacion', label: 'Ubicación' },
-  { href: '#faq', label: 'Preguntas' },
+  { href: '/#alojamientos', label: 'Alojamientos' },
+  { href: '/#servicios', label: 'Servicios' },
+  { href: '/#experiencias', label: 'Experiencias' },
+  { href: '/#ubicacion', label: 'Ubicación' },
+  { href: '/#faq', label: 'Preguntas' },
 ];
 
 export default function Header() {
@@ -31,7 +32,7 @@ export default function Header() {
   return (
     <header className="site-header" id="top">
       <div className="container header-inner">
-        <a href="#top" aria-label="Espacio Raku, volver al inicio">
+        <a href="/" aria-label="Espacio Raku, volver al inicio">
           <OptimizedImage
             src="/assets/brand/logo-color.png"
             alt="Espacio Raku"
@@ -52,7 +53,10 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             className="nav-cta"
-            onClick={close}
+            onClick={(event) => {
+              trackWhatsAppClick('whatsapp_click_header');
+              close(event);
+            }}
             aria-label="Consultar disponibilidad por WhatsApp"
           >
             Consultar

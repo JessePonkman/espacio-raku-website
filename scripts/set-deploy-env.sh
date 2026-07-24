@@ -89,6 +89,7 @@ prompt_optional "CLOUD_RUN_SERVICE" "Cloud Run service name" "espacio-raku-websi
 prompt_optional "CLOUD_RUN_REGION" "Cloud Run region" "us-central1"
 prompt_optional "DOCKER_PLATFORM" "Docker image target platform(s)" "linux/amd64"
 prompt_optional "ALLOW_UNAUTHENTICATED" "Allow public unauthenticated access? true/false" "true"
+prompt_optional "SITE_URL" "Canonical site URL for SEO metadata" "https://espacio-raku.com"
 
 read_line "Custom image tag [optional, press Enter to use git SHA]: "
 if [[ -n "$REPLY_VALUE" ]]; then
@@ -106,6 +107,7 @@ echo "CLOUD_RUN_SERVICE=${CLOUD_RUN_SERVICE}"
 echo "CLOUD_RUN_REGION=${CLOUD_RUN_REGION}"
 echo "DOCKER_PLATFORM=${DOCKER_PLATFORM}"
 echo "ALLOW_UNAUTHENTICATED=${ALLOW_UNAUTHENTICATED}"
+echo "SITE_URL=${SITE_URL}"
 if [[ -n "${TAG:-}" ]]; then
   echo "TAG=${TAG}"
 else

@@ -12,7 +12,7 @@ const highlights = [
   },
   {
     Icon: UsersIcon,
-    text: 'Atención directa y personalizada: Judit te acompaña en todo el proceso.',
+    text: 'Atención directa y personalizada de los anfitriones que te acompañan en todo el proceso.',
   },
 ];
 
@@ -43,7 +43,7 @@ export default function AboutSection() {
         <div className="about-text">
           <span className="eyebrow">SOBRE EL LUGAR</span>
           <h2>
-            Un refugio <span className="accent">cálido y personal</span> en Mendoza
+            Un refugio cálido en <span className="accent">Chacras de Coria</span>
           </h2>
           <p>
             Espacio Raku nació de las ganas de crear algo distinto: un lugar en el que cada

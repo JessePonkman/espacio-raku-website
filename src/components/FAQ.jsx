@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ChevronDown } from './icons/Icons.jsx';
 import { faq } from '../data/faq.js';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
+import { trackWhatsAppClick } from '../utils/analytics.js';
 
 export default function FAQSection() {
   const [open, setOpen] = useState(null);
@@ -11,7 +12,7 @@ export default function FAQSection() {
       <div className="container faq-head">
         <span className="eyebrow">PREGUNTAS FRECUENTES</span>
         <h2>
-          ¿Tenés <span className="accent">dudas</span>?
+          Preguntas frecuentes sobre <span className="accent">alojamiento en Chacras de Coria</span>
         </h2>
         <p className="lead">
           Respondemos las consultas más comunes. Si no encontrás lo que buscás, escribinos
@@ -48,6 +49,7 @@ export default function FAQSection() {
             target="_blank"
             rel="noopener noreferrer"
             className="link-arrow"
+            onClick={() => trackWhatsAppClick('whatsapp_click_faq')}
           >
             Consultanos por WhatsApp →
           </a>

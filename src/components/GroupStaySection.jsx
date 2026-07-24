@@ -1,5 +1,6 @@
 import { groupStay } from '../data/groupStay.js';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
+import { trackWhatsAppClick } from '../utils/analytics.js';
 
 export default function GroupStaySection() {
   return (
@@ -16,6 +17,7 @@ export default function GroupStaySection() {
             rel="noopener noreferrer"
             className="btn btn-primary group-stay-cta"
             aria-label="Consultar para un grupo por WhatsApp (se abre en una nueva pestaña)"
+            onClick={() => trackWhatsAppClick('whatsapp_click_group')}
           >
             {groupStay.ctaLabel}
           </a>

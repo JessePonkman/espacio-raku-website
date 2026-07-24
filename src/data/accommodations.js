@@ -10,6 +10,7 @@ export const accommodations = [
     summaryAmenities: ['Kitchenette', 'Baño privado', 'Aire acondicionado'],
     amenities: ['Kitchenette', 'Baño privado', 'WiFi', 'Aire acondicionado', 'Acceso a piscina'],
     image: '/assets/photos/cabana3-exterior.jpg',
+    imageAlt: 'Loft frente a la piscina para dos personas en Chacras de Coria',
     gallery: [
       '/assets/photos/cabana3-cama.jpg',
       '/assets/photos/cabana3-bano.jpg',
@@ -26,6 +27,7 @@ export const accommodations = [
     summaryAmenities: ['Kitchenette', 'Baño privado', 'Aire acondicionado'],
     amenities: ['Kitchenette', 'Baño privado', 'WiFi', 'Aire acondicionado', 'Acceso a piscina'],
     image: '/assets/photos/cabana2-cama.jpg',
+    imageAlt: 'Loft deluxe para dos personas en Espacio Raku, Chacras de Coria',
     gallery: [
       '/assets/photos/cabana2-interior.jpg',
       '/assets/photos/cabana2-bano.jpg',
@@ -49,6 +51,7 @@ export const accommodations = [
       'Acceso a piscina',
     ],
     image: '/assets/photos/cabana1-sala.jpg',
+    imageAlt: 'Departamento con living propio y cocina equipada en Espacio Raku',
     gallery: [
       '/assets/photos/cabana1-cocina.jpg',
       '/assets/photos/cabana1-estar.jpg',

@@ -1,5 +1,6 @@
 import Calendar from './Calendar.jsx';
 import { buildWhatsAppUrl, messages } from '../utils/whatsapp.js';
+import { trackWhatsAppClick } from '../utils/analytics.js';
 
 export default function Availability() {
   const waUrl = buildWhatsAppUrl(messages.availability);
@@ -9,7 +10,7 @@ export default function Availability() {
       <div className="container avail-head">
         <span className="eyebrow">DISPONIBILIDAD</span>
         <h2>
-          Consultá <span className="accent">disponibilidad</span>
+          Disponibilidad y reserva directa <span className="accent">por WhatsApp</span>
         </h2>
         <p className="lead">
           Revisá las fechas disponibles y escribinos por WhatsApp para coordinar tu estadía.
@@ -26,6 +27,7 @@ export default function Availability() {
             rel="noopener noreferrer"
             className="btn btn-primary"
             aria-label="Consultar disponibilidad por WhatsApp"
+            onClick={() => trackWhatsAppClick('whatsapp_click_availability')}
           >
             Consultar disponibilidad por WhatsApp
           </a>

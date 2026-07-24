@@ -12,6 +12,7 @@ set -Eeuo pipefail
 #   HOST_PORT        Default: 5173
 #   CONTAINER_PORT   Default: 80
 #   NO_CACHE         Set to true to build without Docker cache. Default: false
+#   SITE_URL         Canonical URL for generated SEO assets. Default: https://espacio-raku.com
 #
 # Examples:
 #   HOST_PORT=3000 ./scripts/run-local-container.sh
@@ -32,12 +33,13 @@ main() {
   local host_port="${HOST_PORT:-5173}"
   local container_port="${CONTAINER_PORT:-80}"
   local no_cache="${NO_CACHE:-false}"
+  local site_url="${SITE_URL:-https://espacio-raku.com}"
 
   echo "==> Building Docker image: ${image_name}"
   if [[ "$no_cache" == "true" ]]; then
-    docker build --no-cache -t "$image_name" .
+    docker build --no-cache --build-arg "SITE_URL=${site_url}" -t "$image_name" .
   else
-    docker build -t "$image_name" .
+    docker build --build-arg "SITE_URL=${site_url}" -t "$image_name" .
   fi
 
   if docker ps -a --format '{{.Names}}' | grep -Fxq "$container_name"; then

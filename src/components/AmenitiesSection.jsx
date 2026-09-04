@@ -3,7 +3,6 @@ import {
   WifiIcon,
   HeartIcon,
   SparkleIcon,
-  CarIcon,
   WindIcon,
   LeafIcon,
 } from './icons/Icons.jsx';
@@ -13,7 +12,6 @@ const iconMap = {
   wifi: WifiIcon,
   paw: HeartIcon,
   sparkle: SparkleIcon,
-  car: CarIcon,
   wind: WindIcon,
   leaf: LeafIcon,
 };

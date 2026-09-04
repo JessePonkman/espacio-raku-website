@@ -95,13 +95,6 @@ export const ArrowRight = (p) => (
   </svg>
 );
 
-export const CalendarIcon = (p) => (
-  <svg {...props} {...p}>
-    <rect x="3" y="4" width="18" height="18" rx="2" />
-    <path d="M16 2v4M8 2v4M3 10h18" />
-  </svg>
-);
-
 export const InstagramIcon = (p) => (
   <svg {...props} {...p}>
     <rect x="2" y="2" width="20" height="20" rx="5" />
@@ -135,15 +128,6 @@ export const PoolIcon = (p) => (
     <path d="M2 7c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0" />
     <path d="M2 17c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0" />
     <path d="M8 5V3M16 5V3" />
-  </svg>
-);
-
-export const CarIcon = (p) => (
-  <svg {...props} {...p}>
-    <path d="M19 17H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2z" />
-    <path d="m17 7-2-4H9L7 7" />
-    <circle cx="8" cy="17" r="2" />
-    <circle cx="16" cy="17" r="2" />
   </svg>
 );
 

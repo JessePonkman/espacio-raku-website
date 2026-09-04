@@ -1,5 +1,11 @@
 import { LeafIcon, MoonIcon, UsersIcon } from './icons/Icons.jsx';
-import OptimizedImage, { PHOTO_WIDTHS } from './OptimizedImage.jsx';
+import AboutMediaCarousel from './AboutMediaCarousel.jsx';
+
+const aboutMediaSlides = [
+  { src: '/assets/photos/jardin-pileta.jpg' },
+  { src: '/assets/photos/pileta-panoramica.jpg' },
+  { src: '/assets/photos/jardin-cochera.jpg' },
+];
 
 const highlights = [
   {
@@ -21,13 +27,9 @@ export default function AboutSection() {
     <section className="section about" id="sobre">
       <div className="container about-grid">
         <div className="about-media">
-          <OptimizedImage
-            src="/assets/photos/jardin-pileta.jpg"
-            alt="Jardín y piscina de Espacio Raku en Chacras de Coria"
-            className="about-img"
-            widths={PHOTO_WIDTHS}
-            sizes="(max-width: 760px) calc(100vw - 32px), 50vw"
-            loading="lazy"
+          <AboutMediaCarousel
+            images={aboutMediaSlides}
+            ariaLabel="Jardín, piscina y estacionamiento de Espacio Raku en Chacras de Coria"
           />
           <div className="about-badge" aria-hidden="true">
             <div className="badge-ico">

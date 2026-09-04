@@ -5,3 +5,5 @@ public/assets/optimized/
 *.log
 *.mp4
 .claude
+.env.deploy
+/updated-photos

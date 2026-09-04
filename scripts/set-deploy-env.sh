@@ -8,6 +8,10 @@
 #
 # A normal execution like `./scripts/set-deploy-env.sh` will NOT persist env vars
 # in your current shell. Use `source` or `.` instead.
+#
+# Set NON_INTERACTIVE=true to skip prompts and silently accept whatever value
+# is already exported for each variable (e.g. loaded from .env.deploy by
+# ./deploy.sh). Required variables with no existing value still prompt.
 
 is_sourced() {
   if [[ -n "${ZSH_VERSION:-}" ]]; then
@@ -46,6 +50,11 @@ prompt_required() {
 
   current_value="$(get_var_value "$var_name")"
 
+  if [[ "${NON_INTERACTIVE:-false}" == "true" && -n "$current_value" ]]; then
+    export "${var_name}=${current_value}"
+    return
+  fi
+
   while [[ -z "$value" ]]; do
     if [[ -n "$current_value" ]]; then
       read_line "${label} [${current_value}]: "
@@ -74,6 +83,11 @@ prompt_optional() {
   current_value="$(get_var_value "$var_name")"
   shown_default="${current_value:-$default_value}"
 
+  if [[ "${NON_INTERACTIVE:-false}" == "true" ]]; then
+    export "${var_name}=${shown_default}"
+    return
+  fi
+
   read_line "${label} [${shown_default}]: "
   value="${REPLY_VALUE:-$shown_default}"
 
@@ -91,11 +105,15 @@ prompt_optional "DOCKER_PLATFORM" "Docker image target platform(s)" "linux/amd64
 prompt_optional "ALLOW_UNAUTHENTICATED" "Allow public unauthenticated access? true/false" "true"
 prompt_optional "SITE_URL" "Canonical site URL for SEO metadata" "https://espacio-raku.com"
 
-read_line "Custom image tag [optional, press Enter to use git SHA]: "
-if [[ -n "$REPLY_VALUE" ]]; then
-  export TAG="$REPLY_VALUE"
+if [[ "${NON_INTERACTIVE:-false}" == "true" ]]; then
+  [[ -z "${TAG:-}" ]] && unset TAG
 else
-  unset TAG
+  read_line "Custom image tag [optional, press Enter to use git SHA]: "
+  if [[ -n "$REPLY_VALUE" ]]; then
+    export TAG="$REPLY_VALUE"
+  else
+    unset TAG
+  fi
 fi
 
 echo

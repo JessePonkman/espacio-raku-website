@@ -9,7 +9,7 @@ export const faq = [
     id: 'disponibilidad',
     question: '¿Cómo consulto disponibilidad?',
     answer:
-      'Podés revisar el calendario en la sección de disponibilidad de esta página, o escribirnos directamente por WhatsApp con las fechas que tenés en mente.',
+      'Escribinos directamente por WhatsApp con las fechas que tenés en mente y te confirmamos la disponibilidad.',
   },
   {
     id: 'whatsapp',

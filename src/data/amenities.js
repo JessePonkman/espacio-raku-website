@@ -46,10 +46,11 @@ export const amenities = [
   },
   {
     id: 'parking',
-    variant: 'standard',
+    variant: 'highlight',
     label: 'Estacionamiento',
     description: 'Estacionamiento privado disponible en el lugar.',
-    icon: 'car',
+    image: '/assets/photos/estacionamiento.jpg',
+    imageAlt: 'Estacionamiento privado techado en Espacio Raku.',
   },
   {
     id: 'clima',

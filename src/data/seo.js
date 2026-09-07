@@ -233,7 +233,7 @@ export const seoPages = [
     eyebrow: 'LOFT DELUXE',
     intro:
       'El Loft deluxe es una opción luminosa y tranquila para dos personas, pensada para una estadía independiente en Chacras de Coria, Mendoza.',
-    image: '/assets/photos/loft-deluxe-cama.jpg',
+    image: '/assets/photos/loft-deluxe-interior.jpg',
     highlights: ['2 personas', 'Kitchenette', 'Baño privado', 'WiFi', 'Aire acondicionado', 'Piscina de temporada'],
     sections: [
       { title: 'Un espacio cómodo para descansar', paragraphs: ['El loft combina dormitorio, kitchenette, baño privado y climatización. Es ideal para parejas o viajeros que buscan una base calma para recorrer Mendoza.'] },
@@ -255,7 +255,7 @@ export const seoPages = [
     eyebrow: 'DEPARTAMENTO',
     intro:
       'El departamento es la opción con mayor capacidad de Espacio Raku. Está pensado para hasta cuatro personas y suma living propio y cocina equipada para una estadía con más autonomía.',
-    image: '/assets/photos/departamento-sala.jpg',
+    image: '/assets/photos/departamento-estar-comedor-futon.jpg',
     highlights: ['Hasta 4 personas', 'Living propio', 'Cocina equipada', 'Baño privado', 'WiFi', 'Piscina de temporada'],
     sections: [
       { title: 'Más espacio para una estadía cómoda', paragraphs: ['El departamento funciona bien para quienes necesitan mayor independencia, cocina equipada y un ambiente de estar propio durante su viaje a Chacras de Coria.'] },

@@ -4,7 +4,9 @@ import AboutMediaCarousel from './AboutMediaCarousel.jsx';
 const aboutMediaSlides = [
   { src: '/assets/photos/jardin-pileta.jpg' },
   { src: '/assets/photos/pileta-panoramica.jpg' },
+  { src: '/assets/photos/hero-piscina.jpg' },
   { src: '/assets/photos/jardin-cochera.jpg' },
+  { src: '/assets/photos/fogonero.jpg' },
 ];
 
 const highlights = [
@@ -29,7 +31,7 @@ export default function AboutSection() {
         <div className="about-media">
           <AboutMediaCarousel
             images={aboutMediaSlides}
-            ariaLabel="Jardín, piscina y estacionamiento de Espacio Raku en Chacras de Coria"
+            ariaLabel="Jardín, piscina, estacionamiento y fogonero de Espacio Raku en Chacras de Coria"
           />
           <div className="about-badge" aria-hidden="true">
             <div className="badge-ico">

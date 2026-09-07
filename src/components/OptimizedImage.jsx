@@ -17,7 +17,6 @@ const ASSET_DIMENSIONS = {
   '/assets/photos/departamento-estar-comedor-futon.jpg': [1448, 1086],
   '/assets/photos/departamento-sala.jpg': [1365, 768],
   '/assets/photos/loft-deluxe-bano.jpg': [1264, 843],
-  '/assets/photos/loft-deluxe-cama.jpg': [1264, 843],
   '/assets/photos/loft-deluxe-dormitorio.jpg': [1448, 1086],
   '/assets/photos/loft-deluxe-ducha.jpg': [1086, 1448],
   '/assets/photos/loft-deluxe-interior.jpg': [1448, 1086],

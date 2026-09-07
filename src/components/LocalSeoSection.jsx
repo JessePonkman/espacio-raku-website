@@ -11,10 +11,9 @@ export default function LocalSeoSection() {
         </div>
         <div className="local-seo-copy">
           <p>
-            Espacio Raku está pensado para quienes buscan alojamiento en Chacras de Coria
-            con tranquilidad, privacidad y contacto directo. Estamos en Luján de Cuyo, una
-            de las zonas más elegidas de Mendoza por su cercanía a bodegas, restaurantes,
-            viñedos y paseos de montaña.
+            Espacio Raku está pensado para quienes buscan alojamiento con tranquilidad,
+            privacidad y contacto directo. Estamos en una de las zonas más elegidas de
+            Mendoza por su cercanía a bodegas, restaurantes, viñedos y paseos de montaña.
           </p>
           <p>
             A diferencia de un hotel tradicional, ofrecemos espacios independientes: dos

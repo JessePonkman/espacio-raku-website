@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { testimonials } from '../data/testimonials.js';
 
 const AUTOPLAY_DELAY = 7000;
+const SWIPE_THRESHOLD = 40;
 
 export default function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const touchStartX = useRef(null);
 
   useEffect(() => {
     if (
@@ -22,6 +24,24 @@ export default function TestimonialsSection() {
   }, [activeIndex]);
 
   if (!testimonials.length) return null;
+
+  function showRelativeTestimonial(offset) {
+    setActiveIndex((index) => (index + offset + testimonials.length) % testimonials.length);
+  }
+
+  function handleTouchStart(event) {
+    touchStartX.current = event.touches[0].clientX;
+  }
+
+  function handleTouchEnd(event) {
+    if (touchStartX.current === null) return;
+
+    const distance = event.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+
+    if (Math.abs(distance) < SWIPE_THRESHOLD) return;
+    showRelativeTestimonial(distance > 0 ? -1 : 1);
+  }
 
   return (
     <section className="section testimonials" id="testimonios">
@@ -41,6 +61,11 @@ export default function TestimonialsSection() {
         role="region"
         aria-roledescription="carrusel"
         aria-label="Testimonios de huéspedes"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchCancel={() => {
+          touchStartX.current = null;
+        }}
       >
         <div className="test-carousel-window" aria-live="off">
           {testimonials.map((testimonial, index) => {

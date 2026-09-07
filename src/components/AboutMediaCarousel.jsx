@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import OptimizedImage, { PHOTO_WIDTHS } from './OptimizedImage.jsx';
+
+const SWIPE_THRESHOLD = 40;
 
 export default function AboutMediaCarousel({ images, ariaLabel, intervalMs = 5000 }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const touchStartX = useRef(null);
   const slides = images ?? [];
   const hasMultipleSlides = slides.length > 1;
 
@@ -19,9 +22,40 @@ export default function AboutMediaCarousel({ images, ariaLabel, intervalMs = 500
 
   if (slides.length === 0) return null;
 
+  function showRelativeSlide(offset) {
+    setActiveIndex((index) => (index + offset + slides.length) % slides.length);
+  }
+
+  function handleTouchStart(event) {
+    touchStartX.current = event.touches[0].clientX;
+  }
+
+  function handleTouchEnd(event) {
+    if (touchStartX.current === null) return;
+
+    const distance = event.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+
+    if (Math.abs(distance) < SWIPE_THRESHOLD) return;
+    showRelativeSlide(distance > 0 ? -1 : 1);
+  }
+
   return (
     <>
-      <div className="about-media-carousel" role="img" aria-label={ariaLabel}>
+      <div
+        className="about-media-carousel"
+        role="img"
+        aria-label={ariaLabel}
+        onTouchStart={hasMultipleSlides ? handleTouchStart : undefined}
+        onTouchEnd={hasMultipleSlides ? handleTouchEnd : undefined}
+        onTouchCancel={
+          hasMultipleSlides
+            ? () => {
+                touchStartX.current = null;
+              }
+            : undefined
+        }
+      >
         {slides.map((slide, index) => (
           <div
             key={slide.src}
